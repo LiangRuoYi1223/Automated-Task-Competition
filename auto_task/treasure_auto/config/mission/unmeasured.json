@@ -1,0 +1,15 @@
+{
+  "version": "unmeasured",
+  "origin": "live",
+  "measurement": "unmeasured",
+  "navigation_s": null,
+  "observation_s": null,
+  "grasp_s": null,
+  "placement_s": null,
+  "recovery_s": null,
+  "stop_margin_s": null,
+  "recovery_attempts": null,
+  "recovery_total_s": null,
+  "observation_attempts": null,
+  "evidence_age_s": null
+}

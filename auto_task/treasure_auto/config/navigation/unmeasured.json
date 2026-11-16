@@ -1,0 +1,21 @@
+{
+  "config_version": "unmeasured",
+  "measurement": "unmeasured",
+  "max_age_s": null,
+  "max_gap_s": null,
+  "stop_window_s": null,
+  "stop_linear_m_s": null,
+  "stop_angular_rad_s": null,
+  "coarse_timeout_s": null,
+  "handoff_timeout_s": null,
+  "precision_timeout_s": null,
+  "retry_limit": null,
+  "recovery_seconds": null,
+  "progress_m": null,
+  "progress_rad": null,
+  "max_linear_m_s": null,
+  "max_angular_rad_s": null,
+  "max_linear_accel_m_s2": null,
+  "max_angular_accel_rad_s2": null,
+  "docks": []
+}

@@ -1,0 +1,16 @@
+{
+  "version": "classification-unmeasured-v1",
+  "measurement": "unmeasured",
+  "min_confirmations": null,
+  "min_confirmation_span_s": null,
+  "max_confirmation_gap_s": null,
+  "max_frame_age_s": null,
+  "min_board_area_px2": null,
+  "min_corner_sine": null,
+  "min_pattern_confidence": null,
+  "slot_margin": null,
+  "max_additional_views": null,
+  "observation_name": null,
+  "waypoint_version": null,
+  "evidence": []
+}

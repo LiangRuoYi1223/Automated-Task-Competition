@@ -1,0 +1,14 @@
+{
+  "config_version": "unmeasured-p07",
+  "evidence_age_s": null,
+  "confirmation_frames": null,
+  "confirmation_span_s": null,
+  "max_frame_gap_s": null,
+  "pose_tolerance_mm": null,
+  "relative_tolerance_mm": null,
+  "min_lift_mm": null,
+  "max_lift_mm": null,
+  "transport_pose_id": null,
+  "pump_timeout_s": null,
+  "result_ttl_s": null
+}

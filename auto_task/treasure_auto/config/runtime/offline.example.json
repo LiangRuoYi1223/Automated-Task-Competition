@@ -1,0 +1,8 @@
+{
+  "mode": "offline",
+  "supervision_period_s": 0.01,
+  "lease_s": 1.0,
+  "heartbeat_timeout_s": 2.0,
+  "required_capabilities": ["base", "unique_control"],
+  "signal_adapter": null
+}

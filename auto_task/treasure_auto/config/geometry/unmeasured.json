@@ -1,0 +1,10 @@
+{
+  "version": "geometry-unmeasured-v1", "measurement": "unmeasured",
+  "map_frame": "map", "base_frame": "base_link", "arm_frame": "arm_base",
+  "image_size": null, "approach_mm": null, "descend_mm": null,
+  "lift_mm": null, "withdraw_mm": null, "speeds_mm_s": null, "timeouts_s": null,
+  "cup_radius_mm": null, "tool_error_mm": null, "brick_size_mm": null,
+  "max_error_mm": null, "plane_tolerance_mm": null, "max_pose_age_s": null,
+  "fixed_tool_yaw_rad": null, "yaw_tolerance_rad": null,
+  "max_contact_gap_mm": null, "max_pixel_error_px": null
+}

@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "contract_version": "1.0.0",
+  "dependencies": [
+    {
+      "owner": "P00",
+      "module": "contracts",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P00_delivery.md",
+      "delivery_sha256": "d24f6de7e8ea5db2476fe2073e2b41742272efcff5fdaa4a19135b087d237670",
+      "files": {
+        "contracts/__init__.py": "d0862a2cd585923c7ee065560d1fec52236db991440f67f466b52fb21e230db2",
+        "contracts/core.py": "428b7475fe152c794a481a784ecd68cc6582d18c614115fc15a66250adf2a96b",
+        "contracts/models.py": "1024783d9dff84e2ec2402058163880b716ac5f96bf4bb91a7d783e9461ef4d8",
+        "contracts/ports.py": "62a4cea6a80d39b663c3b63e3d29803f32a23fcf3eb62b75fad0ca86e7b8656f",
+        "contracts/rules.py": "7e8faab0d5af7ff26b6326839ca89e68f928a7295a6138ce5a0091e92f2e73ff",
+        "contracts/schema_v1.json": "1b938e93f1f7efacf6930e6e2c61e9bce3d799abcf7f03b37670bc96429ff1d5"
+      }
+    },
+    {
+      "owner": "P01",
+      "module": "devices",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P01_delivery.md",
+      "delivery_sha256": "bea6a3fe7f96e72134bf6a23d579585c269d7d716407173dda5b004b46f1307f",
+      "files": {
+        "devices/__init__.py": "7abccfd09fcb0eb504f54a2d6aba937e654f34ee6b73cfadb5981804ba000304",
+        "devices/adapters.py": "b37ff7caf5a048800f3b20435fa45de68c184c4a7dadb6b9105036e512393914",
+        "devices/config.py": "9ce643c4b61b43a7d7f7b107a1c946573e3fef33a888c46b1b1b4f1ca3685415",
+        "devices/drivers.py": "efd08e560ec6558fc6dec3f16b2d85b7e1bdec302cc6024c028e87f2676e4c7a",
+        "devices/events.py": "b2eb6181c5501507dba828411e9c1b19727a1e1b200ef445cb24b95d23f35afd",
+        "devices/gateway.py": "b88136cd53510a183d77c9c945698b63aae1fbbda5a4220c8713aae79fb2b3b9",
+        "devices/health.py": "a4201f9453a69a2d2a0433ef18351d61207e3dcc5f8f83aa35c86d836d963f7e"
+      }
+    },
+    {
+      "owner": "P02",
+      "module": "mapping",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P02_delivery.md",
+      "delivery_sha256": "de2cb00bbd8936e29d3c3a372817283556809da64d33e1ec8455e92fe52fb149",
+      "files": {
+        "mapping/__init__.py": "406bf62b99757d0a0241c11f3c3638d6818f91cb8db1c86da4ebca9bfb96bbff",
+        "mapping/configuration.py": "f7ed18ee48ffec5929b2ccb48d03e4bc88ff84870c82d6358e41cdf6db129de0",
+        "mapping/geometry.py": "9df4deddabb1041402ede4b140e5bfbaeb83c7977327819bb8ec65f2deae71a3",
+        "mapping/localization.py": "32ae66797ce6a1d467398dac93706d39ccdba4e74fe704775fbe37f545512cb8",
+        "mapping/service.py": "c7e1fc5e3a5638920e32857aaa5e38848b145cb3a277caf4b4a35782602ffe4e",
+        "mapping/storage.py": "446f45b6eefcca9c5858a30beb840a905e9f415a70350fb92e3507101a37f3c9"
+      }
+    },
+    {
+      "owner": "P03",
+      "module": "navigation",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "navigation/__init__.py": "e5698b10d915e93dfb5cbd0af2cd53ba9909a6e77f903c683b7f17bd9f4c251d",
+        "navigation/config.py": "39d92bee208ebbcb2148efd40990f16dfd185d2b053593008cba3a74cf607008",
+        "navigation/controlled_push.py": "ba07dc21dca3e8a8c1c70524be138037e744b5abac82ab323f08c079c188cd23",
+        "navigation/exit.py": "1d650e05b9961ff399aae68214bb09dc96f8581762c60eba8e002fe52cc5d0a3",
+        "navigation/field_regions.py": "f1f8b3950587d49153af0efee30509c320f29b5a885e2a0b4af3bb6647379f56",
+        "navigation/geometry.py": "de38884e29ce2f9b5300c6071bb7b3459ae7d947f5f1a25bfed456277874e3df",
+        "navigation/observations.py": "8f878306c3309f0c7c9338cf00c203f51a18c44ad6279c95d9ca38a6a1d57eb2",
+        "navigation/service.py": "fa09be4d40fb844a605728e50abab08fab282c3c224007ed4c54298aa081cae0"
+      }
+    },
+    {
+      "owner": "P04",
+      "module": "perception",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "perception/__init__.py": "60474b5d8978cd2d8a84ef362bd61de55c035cc44546081fa02e8507fd27ff35",
+        "perception/association.py": "f939eb0ece049758b63cf0135f14b7aae933173c24282f5c86926662c02b8eb3",
+        "perception/backend.py": "d2b6dd67226e4ff0185b20249a7e2aa3f82d1f018fde7639103dfc249cbed143",
+        "perception/config.py": "ada1ca028628503bd31186581bcc9e379a8efe2758d4e64d6c50adfab2c61527",
+        "perception/geometry.py": "09e319ed28d3aa2fca832476701308abeeb737ba620dc1edcbcc6fdd223f3f4d",
+        "perception/pixels.py": "10bf58d4557f6220b360165e057b6b2bd35cd59618b8256269d559c38c161f72",
+        "perception/service.py": "e9ae3a382446edc233e0b9573b738bb3c1befcc48090b8fd0f6950e5ec772c59",
+        "perception/strategy.py": "4d4c7ecb301b39903370006310873f5fb3be9a224b47e6f89a615f386e0e77d4",
+        "perception/tool.py": "3fc93ce859a3a8e97fc23e92191bfb8c321ab971b5a6620f4b921ac0a5450f2a"
+      }
+    },
+    {
+      "owner": "P05",
+      "module": "classification",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P05_delivery.md",
+      "delivery_sha256": "b388fd47de412ef4e3ff8b142eaa5563a7d88c61b7d8794b0801887f309ef0b7",
+      "files": {
+        "classification/__init__.py": "f11419216332ec1c3e30db46d9e7cf5f680fdf25ac57bb1406a9d5b91b0a5bbf",
+        "classification/config.py": "623e4ea6d9f4eed4e540aabc4eee1cb6d7665dd02427e0b99b1e7bfd917cae1f",
+        "classification/geometry.py": "22dbbb5e5baf52e691c7f85c0c6709675d4633e349b33e7dca30ddcb5093bdac",
+        "classification/observations.py": "0788f77d2cc3a4eef56a005baf306d623349217decbede0c27a12d8adcc4435c",
+        "classification/recovery.py": "94107a40ef5b76725de6ce688b897ae630be7edef0b6e0365bc94c4f2fe89f1f",
+        "classification/service.py": "e06183510af6292ee3f14aac0b7a9626b3dc0c93ba7d6bdbf84dd03504b71bae",
+        "classification/validation.py": "aec948366450c2c79df12d5aef3d9bf57bd7aed7ed86fab289f943218aba8ec4"
+      }
+    },
+    {
+      "owner": "P06",
+      "module": "geometry",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "geometry/__init__.py": "9eb7876c37ff0a843be7a4f398510538eb155ba14e2667d695f5df2c2abe4528",
+        "geometry/calibration.py": "6b256218ba803a505dbc2ce96b6c2692d526263bc5a026675fa3f3bc29f6d57c",
+        "geometry/collision.py": "3bd1bf27668d43f744006510cd0c59351ec6fae22a3d41144a51039196063c49",
+        "geometry/config.py": "17dd05d3686b3f203822d6712a4cb4ac91bb67696853450fdda0053aaad50567",
+        "geometry/guards.py": "112150980eaa6f30a9e7301e1b797d7643c94e5a893f3c5ee18400b2c22083ce",
+        "geometry/inputs.py": "adfc3289a6c5008a6d7fbb177d5b0d3a6265f7c6d2416259ad5692e12c506fae",
+        "geometry/math3d.py": "5572e94757861d16543425dc1b464b3b616c012927deda886bfac78a46904c4a",
+        "geometry/planar.py": "5bd7b836e65129815bb5d55c958472e204893863e801ebff0de516b3da3d0a34",
+        "geometry/service.py": "4bc81dc4a4c2733479347256bde0aac05d54f0cc5cc8d579cf54189f82672b47",
+        "geometry/support.py": "c97895c40109eb7935ce21108a361bebc94253d97f874eb945356a5bfac8492b",
+        "geometry/surface.py": "8fe30484a19a8cec41b0d1bff09094b805aa96c7dd3420d6c7dfd201f57cc5e9"
+      }
+    },
+    {
+      "owner": "P07",
+      "module": "manipulation",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "manipulation/__init__.py": "6db3030b03570a280bdc7454735dd58c28c07440625c1d2384e7aef0b446abe4",
+        "manipulation/config.py": "1b87159c6923525c155878fe0f83e3b3ccf2b3bf4d8fac6898342ad89d8b8277",
+        "manipulation/evidence.py": "906c5d710d206bfbcbdf36927f66cbdebabd86465f5276ecce412fd10754a0dc",
+        "manipulation/guards.py": "101da27dedd5c006440f91385c021188145341cd81af5d381a8090f033be2dc3",
+        "manipulation/service.py": "52bbafc550df7e0e2f056a0213d157607e66d006a40dfa4674edc93c7907f092",
+        "manipulation/strategy.py": "c03110a442234082daac3e5a86c70e2945e39802957e992ef5d9588223ee66cb"
+      }
+    },
+    {
+      "owner": "P08",
+      "module": "placement",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "placement/__init__.py": "e6dae95193108187046b992c7765c60545dda84d6aa6c41b17c8e9c1347f8107",
+        "placement/config.py": "78a4252004aad9c7eac9e548a620c2e746b94c8e83b062cd0f8ee651c4d6971d",
+        "placement/evidence.py": "e9d3df8eebeda16c021fea48485febab395fdc7a8d08a89f278e3f35c9aef13b",
+        "placement/execution.py": "6c749db8df7f719cb921472be5f50f224be844c3914339cba2aec1c0ba2bf92b",
+        "placement/guards.py": "db48b251294109e74502051728fbf9fd5aa046f617ac86b281871e9a056560ae",
+        "placement/inputs.py": "b073e00f105665a8420f2ded04710ed6d19c15dcb05210d79ed747fc5c5ab59c",
+        "placement/layout.py": "a460db6ee7fb6ddd0296f15f908cefb80cf91a2da580c390b32a9d0cbff48821",
+        "placement/recovery.py": "8305abde52adacbbf4b075071393a213ed742ce0f6107d24b1a692fb9225cac2",
+        "placement/service.py": "28f2b37587887e68de9ab87ff39066f4373925473e54e588c9f476f8d97d20ca",
+        "placement/space.py": "2bd47f488ae97707d1a145993709820753e91499eb963c2615922c62f8358950",
+        "placement/targets.py": "fe95da6b188bd384bab1ee8ce043ffefb77cf2f54febbba256d8db77f337d36d"
+      }
+    },
+    {
+      "owner": "P09",
+      "module": "mission",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/2026-11-16_field_strategy.md",
+      "delivery_sha256": "29725337aa713a0aaf3c61b31e1467620aed56b32f861b9b1650dfb274cd8970",
+      "files": {
+        "mission/__init__.py": "4d1d23b4a3b166b2ec3a6f17dd04dbcb65194cd69da9ae723eaa51bf4d98e79d",
+        "mission/accounting.py": "93c8a3ae48299a10a9fc88699fae009fd2bfad9042497db5f96c3528b2754639",
+        "mission/checkpoint.py": "c2d462a2ccdb60a95fd27cd8017d3756090c8b13838cab1e6301403896c64b85",
+        "mission/config.py": "281ac73fae3aa674eb138530f605e27c1f7eb99daa515e509f2f0dfb6e38862f",
+        "mission/engine.py": "c97308c2bb13fdda28c9e080222ca813a7a18c92cc6088fbc99385119e6413d4",
+        "mission/field_strategy.py": "f93557768ae9cb68c18bc88ec6a384ce96a639d60f664ed199884d60609daf1b",
+        "mission/guards.py": "3894b6ed224d8aca7e3b62250a9b386432e3a53c328e111904d27bd118c742a3",
+        "mission/inputs.py": "164884123652916c6848782a7d46ebd9f9ae98d15673239bc2927883e4e2d5b0",
+        "mission/recovery.py": "47d8a67f1a1ddf1a1bdd5afa645ee67c8819871eb767178ecf1ebcc548331e6d",
+        "mission/scoring.py": "a1ba996b128c3798b5e95f330001a97a2114a79cfe1be3e9b6a2681c65f0a694",
+        "mission/simulator.py": "b7581f7014fc5dd7e1d97bbe14d46315b7d937f165ee8533756161f53f2e824a",
+        "mission/transactions.py": "ad4c81bdf780b4afc2de2de28d72387f0e6cbcf985007efbdcec0a75421f860a"
+      }
+    },
+    {
+      "owner": "P10A",
+      "module": "runtime",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P10A_delivery.md",
+      "delivery_sha256": "e458306b83658396a31170ca1870005c3f1628cec632bd4628ec18b4a9ccf2a0",
+      "files": {
+        "runtime/__init__.py": "13c2533e0a283f8ca501b28e4c82f534a73b007c8de60da6d388a2ad11945d2d",
+        "runtime/authority.py": "4771c9bf0f00f0eefd364d5c7d271e910ccfbb21aaf926be4679654e0a3609a5",
+        "runtime/clocks.py": "e55be0c17d92a81f943cbc9df3cff266d93df2e49cab65613649e84b6ca5b2cf",
+        "runtime/config.py": "5a550435a8eab9576586f8c04c5a5cb46c9097f56caa33395c1628a24a498b0c",
+        "runtime/controller.py": "6180fa011ecef2fdd474e7973598d07766b35515b0c6bbc1770187a2b6d2bf41",
+        "runtime/guards.py": "f664e7314fca3dbde7d0aa96a5d4a5b4d302ec7f0c4d996905a74448fec50822",
+        "runtime/supervisor.py": "3afad2545a60130cdf8e83ce82c4730edc9dddde6dae0386f6072396c0db0f2e"
+      }
+    },
+    {
+      "owner": "P10B",
+      "module": "persistence",
+      "contract_version": "1.0.0",
+      "delivery_file": "docs/handoffs/P10B_delivery.md",
+      "delivery_sha256": "87194029f3a87a511159a5be80cc0d000bc549174e83a129cd70015da06fe39e",
+      "files": {
+        "persistence/__init__.py": "4832528594b356fae6dff90461c8b5d6dfe353ec96eb08281673b332229a746c",
+        "persistence/config.py": "9754422c4b43a9ccfd17a22ae4dd24e94fd5bae5a527d8c9509b93ed4c4f512c",
+        "persistence/filesystem.py": "ce45097d711b59b781f34b2b0ffefd1f40eb5ef52b2ada94d452f4992ecd5267",
+        "persistence/lifecycle.py": "fc7082e757dfc44e31677ea44e2d7f5ed605222e3d34631b9aafe1edc3634363",
+        "persistence/operations.py": "4467aa6d2d3fdc69c73e26e44f5cee2d760617b34b874632135e78873ebb803b",
+        "persistence/store.py": "0e6c38ec26727f020ac23d451d10017a765fcf65c4896232508a564ea2b94d1e"
+      }
+    }
+  ],
+  "post_p11_revision": {
+    "date": "2026-11-14",
+    "label": "post-p11-integration-1",
+    "baseline_manifest_sha256": "23b62aa9a5588db735dda5cd57ca3f3edc3d061ea706fcc786fe19a4f0030e59",
+    "historical_handoffs_preserved": true,
+    "verification_report": "docs/verification/post_p11/FINAL_REPORT.md",
+    "changes": {
+      "contracts/rules.py": {
+        "p11_sha256": "36861f646336e225d2a41b54ad2fc67dd96a223dcaeb2961c105687268e99ab8",
+        "post_p11_sha256": "7e8faab0d5af7ff26b6326839ca89e68f928a7295a6138ce5a0091e92f2e73ff"
+      },
+      "mapping/service.py": {
+        "p11_sha256": "1b310881581e580aad053120f3b6108ccd533be481e84e45cafe42e06db46d81",
+        "post_p11_sha256": "c7e1fc5e3a5638920e32857aaa5e38848b145cb3a277caf4b4a35782602ffe4e"
+      },
+      "navigation/service.py": {
+        "p11_sha256": "086523828e4d1b407d42bd66b03172fe53e59d55c54d7e385aa48048d755954c",
+        "post_p11_sha256": "fa09be4d40fb844a605728e50abab08fab282c3c224007ed4c54298aa081cae0"
+      },
+      "geometry/guards.py": {
+        "p11_sha256": "061cff1113991b503196d6006bc45fc7fd4e55cbc73aee99cd3de84204b731c3",
+        "post_p11_sha256": "112150980eaa6f30a9e7301e1b797d7643c94e5a893f3c5ee18400b2c22083ce"
+      },
+      "geometry/service.py": {
+        "p11_sha256": "ba6f320da3354398295e7758c3119dff327453b8987f199e019d9608a03514ae",
+        "post_p11_sha256": "c133f595abc35326f8b2623ba2f0c7011856b97453989badf0fe8e0d0e08d85b"
+      },
+      "manipulation/service.py": {
+        "p11_sha256": "4659b8ae427473483352220c8a7008688ba5afe8888e45587ed58255aaff9259",
+        "post_p11_sha256": "52bbafc550df7e0e2f056a0213d157607e66d006a40dfa4674edc93c7907f092"
+      },
+      "placement/execution.py": {
+        "p11_sha256": "2acf406707a4ace436f2a099efc7c403ce733978819fe8ddc2e0bbe5a7ea8d2a",
+        "post_p11_sha256": "6c749db8df7f719cb921472be5f50f224be844c3914339cba2aec1c0ba2bf92b"
+      },
+      "mission/transactions.py": {
+        "p11_sha256": "fae4437dcdd175ab7fd389fbc5b755b3bf34ac38a8c1d1b37ac6007e97773e6a",
+        "post_p11_sha256": "ad4c81bdf780b4afc2de2de28d72387f0e6cbcf985007efbdcec0a75421f860a"
+      },
+      "runtime/controller.py": {
+        "p11_sha256": "c5012756368f4ffdc5fd3319721a88d7c80da1a386d3e7d0e04e047692eff8ac",
+        "post_p11_sha256": "6180fa011ecef2fdd474e7973598d07766b35515b0c6bbc1770187a2b6d2bf41"
+      },
+      "runtime/guards.py": {
+        "p11_sha256": "e85ad3c1fe0970c803fcabe2982870b1d250f2e10686c227f96edcc3ad07d4b3",
+        "post_p11_sha256": "f664e7314fca3dbde7d0aa96a5d4a5b4d302ec7f0c4d996905a74448fec50822"
+      }
+    }
+  }
+}

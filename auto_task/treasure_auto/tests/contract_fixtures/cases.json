@@ -1,0 +1,4128 @@
+[
+  {
+    "id": "envelope",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "action_id": "sim-action-1",
+        "base_motion_epoch": 0,
+        "control_epoch": 1,
+        "emitted_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 110
+        },
+        "event_id": "sim-event-1",
+        "expires_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 120
+        },
+        "instance_id": "sim-instance-1",
+        "layout_recovery_round": 0,
+        "origin": "simulated",
+        "producer": "P07",
+        "rebuild_generation": 0,
+        "request_id": "sim-work-1",
+        "run_id": "sim-run-1",
+        "sequence": 1,
+        "target_id": "brick-1",
+        "versions": {
+          "calibration": "sim-calibration-v1",
+          "config": "sim-config-v1",
+          "layout": "V1",
+          "map": "sim-map-v1",
+          "mapping": "sim-mapping-v1",
+          "model": "sim-model-v1",
+          "space": 0
+        }
+      },
+      "type": "Envelope"
+    }
+  },
+  {
+    "id": "health",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "capabilities": [
+          {
+            "evidence": [],
+            "name": "sim-camera",
+            "reason": {
+              "code": "unavailable",
+              "detail": "simulated missing camera",
+              "field": "camera"
+            },
+            "status": "unknown"
+          }
+        ],
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P01",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        }
+      },
+      "type": "HealthSnapshot"
+    }
+  },
+  {
+    "id": "localization",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "base_motion_epoch": 0,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P02",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [],
+        "pose": null,
+        "reason": {
+          "code": "unavailable",
+          "detail": "no field localization",
+          "field": "pose"
+        },
+        "trusted": "unknown"
+      },
+      "type": "LocalizationSnapshot"
+    }
+  },
+  {
+    "id": "navigation",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P03",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "exit_evidence": null,
+        "residual_pose": null,
+        "result": {
+          "accepted": "confirmed",
+          "echoed": "confirmed",
+          "elapsed_s": 2.0,
+          "evidence": [],
+          "phase": "trial_lift",
+          "physical": "unknown",
+          "reason": {
+            "code": "timeout",
+            "detail": "no fresh observation",
+            "field": "physical"
+          },
+          "status": "timed_out",
+          "submitted": "confirmed"
+        },
+        "stop": null,
+        "work_ready": "unknown"
+      },
+      "type": "NavigationResult"
+    }
+  },
+  {
+    "id": "perception",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P04",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "reason": null,
+        "state": "empty",
+        "targets": [],
+        "tool": null
+      },
+      "type": "PerceptionResult"
+    }
+  },
+  {
+    "id": "image",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "camera_frame": "sim-camera",
+        "capture_pose": {
+          "angle_unit": "rad",
+          "error_m": 0.01,
+          "error_rad": 0.01,
+          "frame_id": "map",
+          "position_unit": "m",
+          "x": 0,
+          "y": 0,
+          "yaw": 0
+        },
+        "distortion": "corrected",
+        "encoding": "rgb8",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P04",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "height": 480,
+        "image": {
+          "action_id": "sim-action-1",
+          "captured_at": {
+            "basis": "sensor",
+            "boot_id": null,
+            "clock_id": "sim-camera-clock",
+            "seconds": 20.0
+          },
+          "evidence_id": "sim-evidence-1",
+          "kind": "physical_observation",
+          "origin": "simulated",
+          "received_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "run_id": "sim-run-1",
+          "sha256": null,
+          "target_id": "brick-1",
+          "uri": "sim://frames/1",
+          "valid_until": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          }
+        },
+        "observation_id": "sim-observation-1",
+        "preprocessing": {
+          "crop_u": 0,
+          "crop_v": 0,
+          "pad_u": 0,
+          "pad_v": 0,
+          "scale_x": 1,
+          "scale_y": 1
+        },
+        "width": 640
+      },
+      "type": "ImageObservation"
+    }
+  },
+  {
+    "id": "mapping",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "doll"
+          },
+          {
+            "area": "C",
+            "category": "clock"
+          },
+          {
+            "area": "D",
+            "category": "banana"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "geometry",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "collision_free": "unknown",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P06",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "path_id": "sim-path-1",
+        "reachable": "confirmed",
+        "segments": [
+          {
+            "phase": "trial_lift",
+            "speed_mm_s": 1,
+            "target": {
+              "error_mm": 1,
+              "frame_id": "sim-arm",
+              "unit": "mm",
+              "x": 100,
+              "y": 0,
+              "z": 100
+            },
+            "timeout_s": 2
+          }
+        ],
+        "target": {
+          "error_mm": 1,
+          "frame_id": "sim-arm",
+          "unit": "mm",
+          "x": 100,
+          "y": 0,
+          "z": 100
+        }
+      },
+      "type": "GeometryPlan"
+    }
+  },
+  {
+    "id": "manipulation",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P07",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "holding": {
+          "evidence": [],
+          "state": "unknown",
+          "target_id": "brick-1",
+          "tool_offset": null
+        },
+        "readiness": null,
+        "recovery_plan": null,
+        "result": {
+          "accepted": "confirmed",
+          "echoed": "confirmed",
+          "elapsed_s": 2.0,
+          "evidence": [],
+          "phase": "trial_lift",
+          "physical": "unknown",
+          "reason": {
+            "code": "timeout",
+            "detail": "no fresh observation",
+            "field": "physical"
+          },
+          "status": "timed_out",
+          "submitted": "confirmed"
+        }
+      },
+      "type": "ManipulationResult"
+    }
+  },
+  {
+    "id": "space",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "occupancies": [
+          {
+            "area": null,
+            "error_m": 0.01,
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "footprint_m": [
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0.1,
+                "y": 0
+              },
+              {
+                "x": 0.1,
+                "y": 0.1
+              },
+              {
+                "x": 0,
+                "y": 0.1
+              }
+            ],
+            "frame_id": "map",
+            "observed_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 105
+            },
+            "state": "unknown",
+            "support_ids": [],
+            "target_id": "brick-1",
+            "visibility": "occluded",
+            "z_max_m": 0.1,
+            "z_min_m": 0
+          }
+        ],
+        "version": 0
+      },
+      "type": "SpaceSnapshot"
+    }
+  },
+  {
+    "id": "layout",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [
+              "brick-1"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 3,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [
+              "brick-2"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V3",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "mission",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "delivery_complete": "unknown",
+        "end_reason": null,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P09",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "layout_complete": "unknown",
+        "order": null,
+        "phase": "wait_mapping",
+        "recovery_budget": null,
+        "score": {
+          "confirmed_points": null,
+          "evidence": [],
+          "policy_version": "v2",
+          "unresolved_target_ids": [
+            "brick-1"
+          ]
+        }
+      },
+      "type": "MissionDecision"
+    }
+  },
+  {
+    "id": "run",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "deadline": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 700
+        },
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P10A",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "ever_restarted": false,
+        "start_signal_id": "sim-start-1",
+        "started_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 100
+        },
+        "state": "offline"
+      },
+      "type": "RunContext"
+    }
+  },
+  {
+    "id": "transaction",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "budgets": [
+          {
+            "attempts_limit": 2,
+            "attempts_used": 0,
+            "name": "sim-retry",
+            "seconds_limit": 4,
+            "seconds_used": 0
+          }
+        ],
+        "clearing_evidence": [],
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-transaction-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P09",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "expected_revision": 0,
+        "expected_space_version": 0,
+        "holding": {
+          "evidence": [
+            {
+              "action_id": "sim-action-1",
+              "captured_at": {
+                "basis": "sensor",
+                "boot_id": null,
+                "clock_id": "sim-camera-clock",
+                "seconds": 20.0
+              },
+              "evidence_id": "sim-evidence-1",
+              "kind": "physical_observation",
+              "origin": "simulated",
+              "received_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "run_id": "sim-run-1",
+              "sha256": null,
+              "target_id": "brick-1",
+              "uri": "sim://frames/1",
+              "valid_until": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              }
+            }
+          ],
+          "state": "empty",
+          "target_id": null,
+          "tool_offset": null
+        },
+        "holding_update": {
+          "cause": "release",
+          "current": {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "state": "empty",
+            "target_id": null,
+            "tool_offset": null
+          },
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P07",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "previous": "held"
+        },
+        "inventory": [
+          {
+            "area": "A",
+            "category": "cake",
+            "identity_confirmed": "confirmed",
+            "inventory_id": "inventory-1",
+            "location": "region",
+            "target_ids": [
+              "brick-1"
+            ]
+          }
+        ],
+        "layouts": [],
+        "mapping": {
+          "assignments": [
+            {
+              "area": "B",
+              "category": "doll"
+            },
+            {
+              "area": "C",
+              "category": "clock"
+            },
+            {
+              "area": "D",
+              "category": "banana"
+            }
+          ],
+          "direction": "confirmed",
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P05",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "evidence": [
+            {
+              "action_id": "sim-action-1",
+              "captured_at": {
+                "basis": "sensor",
+                "boot_id": null,
+                "clock_id": "sim-camera-clock",
+                "seconds": 20.0
+              },
+              "evidence_id": "sim-evidence-1",
+              "kind": "physical_observation",
+              "origin": "simulated",
+              "received_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "run_id": "sim-run-1",
+              "sha256": null,
+              "target_id": "brick-1",
+              "uri": "sim://frames/1",
+              "valid_until": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              }
+            }
+          ],
+          "frozen_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 109
+          },
+          "mapping_version": "sim-mapping-v1"
+        },
+        "release_events": [
+          {
+            "area": "A",
+            "category": "cake",
+            "correct_region": "confirmed",
+            "delivery_key": {
+              "inventory_id": "inventory-1",
+              "run_id": "sim-run-1"
+            },
+            "envelope": {
+              "action_id": "sim-action-1",
+              "base_motion_epoch": 0,
+              "control_epoch": 1,
+              "emitted_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "event_id": "sim-release-1",
+              "expires_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              },
+              "instance_id": "sim-instance-1",
+              "layout_recovery_round": 0,
+              "origin": "simulated",
+              "producer": "P08",
+              "rebuild_generation": 0,
+              "request_id": "sim-work-1",
+              "run_id": "sim-run-1",
+              "sequence": 1,
+              "target_id": "brick-1",
+              "versions": {
+                "calibration": "sim-calibration-v1",
+                "config": "sim-config-v1",
+                "layout": "V1",
+                "map": "sim-map-v1",
+                "mapping": "sim-mapping-v1",
+                "model": "sim-model-v1",
+                "space": 0
+              }
+            },
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "mapping_version": "sim-mapping-v1",
+            "released_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 109.5
+            },
+            "separated": "confirmed"
+          }
+        ],
+        "run_update": null,
+        "space": {
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P08",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 1
+            }
+          },
+          "occupancies": [
+            {
+              "area": "A",
+              "error_m": 0.01,
+              "evidence": [
+                {
+                  "action_id": "sim-action-1",
+                  "captured_at": {
+                    "basis": "sensor",
+                    "boot_id": null,
+                    "clock_id": "sim-camera-clock",
+                    "seconds": 20.0
+                  },
+                  "evidence_id": "sim-evidence-1",
+                  "kind": "physical_observation",
+                  "origin": "simulated",
+                  "received_at": {
+                    "basis": "monotonic",
+                    "boot_id": "sim-boot",
+                    "clock_id": "sim-monotonic",
+                    "seconds": 110
+                  },
+                  "run_id": "sim-run-1",
+                  "sha256": null,
+                  "target_id": "brick-1",
+                  "uri": "sim://frames/1",
+                  "valid_until": {
+                    "basis": "monotonic",
+                    "boot_id": "sim-boot",
+                    "clock_id": "sim-monotonic",
+                    "seconds": 120
+                  }
+                }
+              ],
+              "footprint_m": [
+                {
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "x": 0.1,
+                  "y": 0
+                },
+                {
+                  "x": 0.1,
+                  "y": 0.1
+                },
+                {
+                  "x": 0,
+                  "y": 0.1
+                }
+              ],
+              "frame_id": "map",
+              "observed_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "state": "actual",
+              "support_ids": [],
+              "target_id": "brick-1",
+              "visibility": "visible",
+              "z_max_m": 0.1,
+              "z_min_m": 0
+            }
+          ],
+          "version": 1
+        },
+        "transaction_id": "sim-tx-1"
+      },
+      "type": "StateTransaction"
+    }
+  },
+  {
+    "id": "state",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "budgets": [
+          {
+            "attempts_limit": 2,
+            "attempts_used": 0,
+            "name": "sim-retry",
+            "seconds_limit": 4,
+            "seconds_used": 0
+          }
+        ],
+        "deliveries": [],
+        "holding": {
+          "evidence": [
+            {
+              "action_id": "sim-action-1",
+              "captured_at": {
+                "basis": "sensor",
+                "boot_id": null,
+                "clock_id": "sim-camera-clock",
+                "seconds": 20.0
+              },
+              "evidence_id": "sim-evidence-1",
+              "kind": "physical_observation",
+              "origin": "simulated",
+              "received_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "run_id": "sim-run-1",
+              "sha256": null,
+              "target_id": "brick-1",
+              "uri": "sim://frames/1",
+              "valid_until": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              }
+            }
+          ],
+          "state": "held",
+          "target_id": "brick-1",
+          "tool_offset": {
+            "error_mm": 1,
+            "frame_id": "tool",
+            "unit": "mm",
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        "inventory": [
+          {
+            "area": null,
+            "category": "cake",
+            "identity_confirmed": "confirmed",
+            "inventory_id": "inventory-1",
+            "location": "held",
+            "target_ids": [
+              "brick-1"
+            ]
+          }
+        ],
+        "layouts": [],
+        "mapping": {
+          "assignments": [
+            {
+              "area": "B",
+              "category": "doll"
+            },
+            {
+              "area": "C",
+              "category": "clock"
+            },
+            {
+              "area": "D",
+              "category": "banana"
+            }
+          ],
+          "direction": "confirmed",
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P05",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "evidence": [
+            {
+              "action_id": "sim-action-1",
+              "captured_at": {
+                "basis": "sensor",
+                "boot_id": null,
+                "clock_id": "sim-camera-clock",
+                "seconds": 20.0
+              },
+              "evidence_id": "sim-evidence-1",
+              "kind": "physical_observation",
+              "origin": "simulated",
+              "received_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "run_id": "sim-run-1",
+              "sha256": null,
+              "target_id": "brick-1",
+              "uri": "sim://frames/1",
+              "valid_until": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              }
+            }
+          ],
+          "frozen_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 109
+          },
+          "mapping_version": "sim-mapping-v1"
+        },
+        "revision": 0,
+        "run": {
+          "deadline": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 700
+          },
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P10A",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "ever_restarted": false,
+          "start_signal_id": "sim-start-1",
+          "started_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 100
+          },
+          "state": "offline"
+        },
+        "space": {
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P08",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "occupancies": [
+            {
+              "area": null,
+              "error_m": 0.01,
+              "evidence": [
+                {
+                  "action_id": "sim-action-1",
+                  "captured_at": {
+                    "basis": "sensor",
+                    "boot_id": null,
+                    "clock_id": "sim-camera-clock",
+                    "seconds": 20.0
+                  },
+                  "evidence_id": "sim-evidence-1",
+                  "kind": "physical_observation",
+                  "origin": "simulated",
+                  "received_at": {
+                    "basis": "monotonic",
+                    "boot_id": "sim-boot",
+                    "clock_id": "sim-monotonic",
+                    "seconds": 110
+                  },
+                  "run_id": "sim-run-1",
+                  "sha256": null,
+                  "target_id": "brick-1",
+                  "uri": "sim://frames/1",
+                  "valid_until": {
+                    "basis": "monotonic",
+                    "boot_id": "sim-boot",
+                    "clock_id": "sim-monotonic",
+                    "seconds": 120
+                  }
+                }
+              ],
+              "footprint_m": [
+                {
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "x": 0.1,
+                  "y": 0
+                },
+                {
+                  "x": 0.1,
+                  "y": 0.1
+                },
+                {
+                  "x": 0,
+                  "y": 0.1
+                }
+              ],
+              "frame_id": "map",
+              "observed_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 105
+              },
+              "state": "unknown",
+              "support_ids": [],
+              "target_id": "brick-1",
+              "visibility": "occluded",
+              "z_max_m": 0.1,
+              "z_min_m": 0
+            }
+          ],
+          "version": 0
+        }
+      },
+      "type": "StateSnapshot"
+    }
+  },
+  {
+    "id": "integration",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "checks": [
+          {
+            "log_uri": "sim://log",
+            "reason": null,
+            "scenario_id": "P00-T06",
+            "status": "confirmed",
+            "tier": "offline"
+          }
+        ],
+        "contract_version": "1.0.0",
+        "dependencies": [
+          {
+            "available": "unknown",
+            "contract_version": null,
+            "delivery_version": null,
+            "owner": "P01",
+            "reason": {
+              "code": "unavailable",
+              "detail": "not delivered",
+              "field": "devices"
+            }
+          }
+        ],
+        "origin": "simulated"
+      },
+      "type": "IntegrationReport"
+    }
+  },
+  {
+    "id": "stillness",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "all_stopped": "confirmed",
+        "capture_end": {
+          "basis": "sensor",
+          "boot_id": null,
+          "clock_id": "sim-camera-clock",
+          "seconds": 20.5
+        },
+        "capture_start": {
+          "basis": "sensor",
+          "boot_id": null,
+          "clock_id": "sim-camera-clock",
+          "seconds": 20
+        },
+        "continuous": "confirmed",
+        "coverage_polygon_m": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0.1,
+            "y": 0
+          },
+          {
+            "x": 0.1,
+            "y": 0.1
+          },
+          {
+            "x": 0,
+            "y": 0.1
+          }
+        ],
+        "covered_target_ids": [
+          "brick-1"
+        ],
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          },
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.5
+            },
+            "evidence_id": "sim-evidence-2",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frame_id": "map",
+        "max_adjacent_motion_m": 0,
+        "max_total_motion_m": 0,
+        "observation_ids": [
+          "frame-1",
+          "frame-2"
+        ],
+        "scene_epoch": 0,
+        "tolerance_m": 0.001
+      },
+      "type": "StillnessCertificate"
+    }
+  },
+  {
+    "id": "arm_intent",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "arm_plan": {
+          "collision_free": "confirmed",
+          "envelope": {
+            "action_id": "sim-action-1",
+            "base_motion_epoch": 0,
+            "control_epoch": 1,
+            "emitted_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "event_id": "sim-event-1",
+            "expires_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            },
+            "instance_id": "sim-instance-1",
+            "layout_recovery_round": 0,
+            "origin": "simulated",
+            "producer": "P06",
+            "rebuild_generation": 0,
+            "request_id": "sim-work-1",
+            "run_id": "sim-run-1",
+            "sequence": 1,
+            "target_id": "brick-1",
+            "versions": {
+              "calibration": "sim-calibration-v1",
+              "config": "sim-config-v1",
+              "layout": "V1",
+              "map": "sim-map-v1",
+              "mapping": "sim-mapping-v1",
+              "model": "sim-model-v1",
+              "space": 0
+            }
+          },
+          "evidence": [
+            {
+              "action_id": "sim-action-1",
+              "captured_at": {
+                "basis": "sensor",
+                "boot_id": null,
+                "clock_id": "sim-camera-clock",
+                "seconds": 20.0
+              },
+              "evidence_id": "sim-evidence-1",
+              "kind": "physical_observation",
+              "origin": "simulated",
+              "received_at": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 110
+              },
+              "run_id": "sim-run-1",
+              "sha256": null,
+              "target_id": "brick-1",
+              "uri": "sim://frames/1",
+              "valid_until": {
+                "basis": "monotonic",
+                "boot_id": "sim-boot",
+                "clock_id": "sim-monotonic",
+                "seconds": 120
+              }
+            }
+          ],
+          "path_id": "sim-path-1",
+          "reachable": "confirmed",
+          "segments": [
+            {
+              "phase": "trial_lift",
+              "speed_mm_s": 1,
+              "target": {
+                "error_mm": 1,
+                "frame_id": "sim-arm",
+                "unit": "mm",
+                "x": 100,
+                "y": 0,
+                "z": 100
+              },
+              "timeout_s": 2
+            }
+          ],
+          "target": {
+            "error_mm": 1,
+            "frame_id": "sim-arm",
+            "unit": "mm",
+            "x": 100,
+            "y": 0,
+            "z": 100
+          }
+        },
+        "base_goal": null,
+        "base_velocity_m_s_rad_s": null,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P07",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "operation": "arm",
+        "order": null,
+        "pump_enabled": null
+      },
+      "type": "ActionIntent"
+    }
+  },
+  {
+    "id": "intent_receipt",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "action_id": "sim-action-1",
+        "commit": {
+          "reason": null,
+          "revision": 1,
+          "space_version": 0,
+          "status": "committed",
+          "transaction_id": "sim-intent-commit"
+        },
+        "intent_sha256": "abf0913e02c4f994d393ce2c24008986c88b276d0edeb75ec8c67f8a794aed9c",
+        "run_id": "sim-run-1"
+      },
+      "type": "IntentReceipt"
+    }
+  },
+  {
+    "id": "mapping_permutation_1",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "doll"
+          },
+          {
+            "area": "C",
+            "category": "clock"
+          },
+          {
+            "area": "D",
+            "category": "banana"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "mapping_permutation_2",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "doll"
+          },
+          {
+            "area": "C",
+            "category": "banana"
+          },
+          {
+            "area": "D",
+            "category": "clock"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "mapping_permutation_3",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "clock"
+          },
+          {
+            "area": "C",
+            "category": "doll"
+          },
+          {
+            "area": "D",
+            "category": "banana"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "mapping_permutation_4",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "clock"
+          },
+          {
+            "area": "C",
+            "category": "banana"
+          },
+          {
+            "area": "D",
+            "category": "doll"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "mapping_permutation_5",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "banana"
+          },
+          {
+            "area": "C",
+            "category": "doll"
+          },
+          {
+            "area": "D",
+            "category": "clock"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "mapping_permutation_6",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "banana"
+          },
+          {
+            "area": "C",
+            "category": "clock"
+          },
+          {
+            "area": "D",
+            "category": "doll"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "V1_legal",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V1",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "V1_illegal",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V1",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "V2_legal",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [
+              "brick-1",
+              "brick-2"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V2",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "V2_illegal",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [
+              "brick-1"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V2",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "V3_legal",
+    "origin": "simulated",
+    "expected": "accept",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [
+              "brick-1"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 3,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [
+              "brick-2"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V3",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "V3_illegal",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "layout_quality",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "area": "B",
+        "bases_adjacent": "confirmed",
+        "bricks": [
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-1",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 1,
+            "near_center": "confirmed",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 1,
+            "support_ids": [],
+            "support_ratio_lower": null,
+            "target_id": "brick-1"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-2",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 2,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 2,
+            "support_ids": [
+              "brick-1"
+            ],
+            "support_ratio_lower": 0.8,
+            "target_id": "brick-2"
+          },
+          {
+            "evidence": [
+              {
+                "action_id": "sim-action-1",
+                "captured_at": {
+                  "basis": "sensor",
+                  "boot_id": null,
+                  "clock_id": "sim-camera-clock",
+                  "seconds": 20.0
+                },
+                "evidence_id": "sim-evidence-1",
+                "kind": "physical_observation",
+                "origin": "simulated",
+                "received_at": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 110
+                },
+                "run_id": "sim-run-1",
+                "sha256": null,
+                "target_id": "brick-3",
+                "uri": "sim://frames/1",
+                "valid_until": {
+                  "basis": "monotonic",
+                  "boot_id": "sim-boot",
+                  "clock_id": "sim-monotonic",
+                  "seconds": 120
+                }
+              }
+            ],
+            "horizontal": "confirmed",
+            "in_region": "confirmed",
+            "layer": 3,
+            "near_center": "unknown",
+            "placed_recovery_round": 0,
+            "released": "confirmed",
+            "slot": 3,
+            "support_ids": [
+              "brick-2"
+            ],
+            "support_ratio_lower": 0.81,
+            "target_id": "brick-3"
+          }
+        ],
+        "confirmed_count": 3,
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P08",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "kind": "V3",
+        "layout_recovery_round": 0,
+        "quality": "confirmed",
+        "rebuild_generation": 0
+      },
+      "type": "LayoutSnapshot"
+    }
+  },
+  {
+    "id": "missing_frame",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "error_mm": 1,
+        "frame_id": "",
+        "unit": "mm",
+        "x": 100,
+        "y": 0,
+        "z": 100
+      },
+      "type": "ArmPoint"
+    }
+  },
+  {
+    "id": "invalid_unit",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "error_mm": 1,
+        "frame_id": "sim-arm",
+        "unit": "m",
+        "x": 100,
+        "y": 0,
+        "z": 100
+      },
+      "type": "ArmPoint"
+    }
+  },
+  {
+    "id": "duplicate_mapping",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "1.0.0",
+      "payload": {
+        "assignments": [
+          {
+            "area": "B",
+            "category": "doll"
+          },
+          {
+            "area": "B",
+            "category": "doll"
+          },
+          {
+            "area": "D",
+            "category": "banana"
+          }
+        ],
+        "direction": "confirmed",
+        "envelope": {
+          "action_id": "sim-action-1",
+          "base_motion_epoch": 0,
+          "control_epoch": 1,
+          "emitted_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 110
+          },
+          "event_id": "sim-event-1",
+          "expires_at": {
+            "basis": "monotonic",
+            "boot_id": "sim-boot",
+            "clock_id": "sim-monotonic",
+            "seconds": 120
+          },
+          "instance_id": "sim-instance-1",
+          "layout_recovery_round": 0,
+          "origin": "simulated",
+          "producer": "P05",
+          "rebuild_generation": 0,
+          "request_id": "sim-work-1",
+          "run_id": "sim-run-1",
+          "sequence": 1,
+          "target_id": "brick-1",
+          "versions": {
+            "calibration": "sim-calibration-v1",
+            "config": "sim-config-v1",
+            "layout": "V1",
+            "map": "sim-map-v1",
+            "mapping": "sim-mapping-v1",
+            "model": "sim-model-v1",
+            "space": 0
+          }
+        },
+        "evidence": [
+          {
+            "action_id": "sim-action-1",
+            "captured_at": {
+              "basis": "sensor",
+              "boot_id": null,
+              "clock_id": "sim-camera-clock",
+              "seconds": 20.0
+            },
+            "evidence_id": "sim-evidence-1",
+            "kind": "physical_observation",
+            "origin": "simulated",
+            "received_at": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 110
+            },
+            "run_id": "sim-run-1",
+            "sha256": null,
+            "target_id": "brick-1",
+            "uri": "sim://frames/1",
+            "valid_until": {
+              "basis": "monotonic",
+              "boot_id": "sim-boot",
+              "clock_id": "sim-monotonic",
+              "seconds": 120
+            }
+          }
+        ],
+        "frozen_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 109
+        },
+        "mapping_version": "sim-mapping-v1"
+      },
+      "type": "MappingSnapshot"
+    }
+  },
+  {
+    "id": "unknown_contract_version",
+    "origin": "simulated",
+    "expected": "reject",
+    "validator": "structure",
+    "wire": {
+      "contract_version": "2.0.0",
+      "payload": {
+        "action_id": "sim-action-1",
+        "base_motion_epoch": 0,
+        "control_epoch": 1,
+        "emitted_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 110
+        },
+        "event_id": "sim-event-1",
+        "expires_at": {
+          "basis": "monotonic",
+          "boot_id": "sim-boot",
+          "clock_id": "sim-monotonic",
+          "seconds": 120
+        },
+        "instance_id": "sim-instance-1",
+        "layout_recovery_round": 0,
+        "origin": "simulated",
+        "producer": "P07",
+        "rebuild_generation": 0,
+        "request_id": "sim-work-1",
+        "run_id": "sim-run-1",
+        "sequence": 1,
+        "target_id": "brick-1",
+        "versions": {
+          "calibration": "sim-calibration-v1",
+          "config": "sim-config-v1",
+          "layout": "V1",
+          "map": "sim-map-v1",
+          "mapping": "sim-mapping-v1",
+          "model": "sim-model-v1",
+          "space": 0
+        }
+      },
+      "type": "Envelope"
+    }
+  }
+]

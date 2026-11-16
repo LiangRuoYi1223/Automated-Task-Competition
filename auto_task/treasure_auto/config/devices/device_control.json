@@ -1,0 +1,21 @@
+{
+  "contract_version": "1.0.0",
+  "config_version": "p01-unmeasured-v1",
+  "real_output_enabled": false,
+  "arm_adapter": "sdk_mm_min",
+  "max_linear_m_s": null,
+  "max_angular_rad_s": null,
+  "arm_frame_id": null,
+  "arm_bounds_mm": null,
+  "stage_limits": {
+    "approach": null,
+    "descend": null,
+    "contact": null,
+    "trial_lift": null,
+    "transport": null,
+    "place": null,
+    "withdraw": null,
+    "dismantle": null,
+    "temporary": null
+  }
+}

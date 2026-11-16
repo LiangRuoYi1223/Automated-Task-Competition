@@ -1,0 +1,1062 @@
+{
+  "schema_version": 1,
+  "contract_version": "1.0.0",
+  "scope": "Offline selected evidence; PASS is not formal end-to-end or hardware acceptance.",
+  "source": "子代理实施任务包_v1/02_集成验收矩阵.txt",
+  "current_dependency_note": "P00–P10B including P07/P08/P09 source and deliveries exist. Earlier reports saying P07/P08/P09 not delivered are historical; remaining gates name actual missing capabilities.",
+  "scenarios": [
+    {
+      "id": "E01",
+      "title": "启动与映射门槛",
+      "packages": [
+        "P05",
+        "P09",
+        "P10A"
+      ],
+      "requirements": [
+        "G01",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p10a_lifecycle.LifecycleTests.test_T01_only_one_start_and_deadline_without_mapping",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "合法开始只生成一个原600秒截止；重复开始不重置。"
+        },
+        {
+          "id": "test_p10a_permissions.PermissionTests.test_missing_mapping_allows_read_board_but_not_central_work",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "无映射仍可读板导航，但不能中央取砖。"
+        },
+        {
+          "id": "test_p05_service.ServiceTests.test_T01_complete_new_frames_commit_full_mapping_and_evidence_once",
+          "level": "component",
+          "real_packages": [
+            "P05"
+          ],
+          "proves": "P05完整新帧确认与映射冻结；协调/输入仍为测试替身。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_T01_missing_mapping_only_board_never_grasp",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09无映射只给读板阶段，不派抓取。"
+        }
+      ],
+      "remaining_gaps": [
+        "组件分别通过不等于P05→P09→P10A完整启动链；P05-C0-01/03/04、P09-C0-01的采集/事务/争议及阶段回调仍待冻结与装配。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E02",
+      "title": "蛋糕优先闭环",
+      "packages": [
+        "P03",
+        "P04",
+        "P06",
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "requirements": [
+        "G01",
+        "G04",
+        "G05",
+        "P11-T02"
+      ],
+      "cases": [
+        {
+          "id": "test_p03_service.ServiceTests.test_T01_arrived_but_moving_never_opens_work",
+          "level": "component",
+          "real_packages": [
+            "P03"
+          ],
+          "proves": "导航到达回调但车体仍动时不可抓放。"
+        },
+        {
+          "id": "test_p04_service.ServiceTests.test_T02_board_and_physical_brick_in_one_frame_only_brick_can_be_confirmed",
+          "level": "component",
+          "real_packages": [
+            "P04"
+          ],
+          "proves": "板面图案与可抓实体分开。"
+        },
+        {
+          "id": "test_p06_paths.PathTests.test_R04_five_segments_have_distinct_heights_speeds_timeouts_and_no_physical_success",
+          "level": "component",
+          "real_packages": [
+            "P06"
+          ],
+          "proves": "实际几何计划的分段输出不冒充物理成功。"
+        },
+        {
+          "id": "test_p07_behavior.BehaviorTests.test_T03_transport_requires_independent_new_held_frames",
+          "level": "component",
+          "real_packages": [
+            "P07"
+          ],
+          "proves": "运输姿态需要新的同砖持物观察。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_T01_cake_closure_required_before_ordinary",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "蛋糕到A、稳定与空臂条件闭合前不派普通单。"
+        },
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_real_release_duplicate_layout_failure_counts_once_and_keeps_empty_unready",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P07",
+            "P08",
+            "P09",
+            "P10B"
+          ],
+          "proves": "真实P08释放→P07空臂提议→P09协调→P10B发布；释放不自动生成布局/行驶成功。"
+        }
+      ],
+      "remaining_gaps": [
+        "释放事务是窄边界；P03导航、P04采集、P06逐段认证至P07/P08实际动作与P09全部阶段仍未串成生产闭环（P07-C0-02/04、P08-C0-02/05、P09-C0-01）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E03",
+      "title": "普通唯一目标",
+      "packages": [
+        "P04",
+        "P07",
+        "P09"
+      ],
+      "requirements": [
+        "G02",
+        "G05",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p04_service.ServiceTests.test_T05_three_same_class_bricks_keep_ids_across_new_frames_and_occlusion",
+          "level": "component",
+          "real_packages": [
+            "P04"
+          ],
+          "proves": "三个同类实体保持独立身份，遮挡不新造实体。"
+        },
+        {
+          "id": "test_p07_behavior.BehaviorTests.test_T01_unknown_or_held_rejects_second_grasp",
+          "level": "component",
+          "real_packages": [
+            "P07"
+          ],
+          "proves": "UNKNOWN/HELD均拒绝第二次抓取。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_T02_one_target_arbitrary_category_no_parallel_order",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "多个候选只锁一个，任意类别顺序，不等九砖列表。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_missing_candidates_not_complete_and_bounded_observation",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "无候选不冒充搬运完成，观察次数有界。"
+        }
+      ],
+      "remaining_gaps": [
+        "P04真实模型/实体关联与P06当前计划经正式回调进入P09尚未装配；此行是组件证据，非端到端真实一轮。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E04",
+      "title": "证据不足与持物锁",
+      "packages": [
+        "P01",
+        "P04",
+        "P07",
+        "P08"
+      ],
+      "requirements": [
+        "G04",
+        "G05",
+        "P11-T04"
+      ],
+      "cases": [
+        {
+          "id": "test_p01_gateway.GatewayTests.test_T06_echo_never_proves_arrival_or_grip",
+          "level": "component",
+          "real_packages": [
+            "P01"
+          ],
+          "proves": "真实最终网关把回显与物理结果分层。"
+        },
+        {
+          "id": "test_p01_gateway.GatewayTests.test_T06_pump_echo_is_not_holding_or_release",
+          "level": "component",
+          "real_packages": [
+            "P01"
+          ],
+          "proves": "开泵回显不证明吸住，停止不统一关泵。"
+        },
+        {
+          "id": "test_p04_service.ServiceTests.test_T06_occluded_multiple_predicted_echo_or_partial_rim_returns_unknown",
+          "level": "component",
+          "real_packages": [
+            "P04"
+          ],
+          "proves": "遮挡/多义/预测/不完整工具观察维持UNKNOWN。"
+        },
+        {
+          "id": "test_p07_boundaries.BoundaryTests.test_T02_old_capture_with_new_receipt_is_not_new_evidence",
+          "level": "component",
+          "real_packages": [
+            "P07"
+          ],
+          "proves": "旧采集新收件不能证明试抬。"
+        },
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_unknown_release_keeps_held_and_zero_arrivals_and_blocks_second_grasp",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P07",
+            "P08",
+            "P09",
+            "P10B"
+          ],
+          "proves": "P07/P08/P09/真实SQLite边界拒绝UNKNOWN、echo、错区、旧实例释放；保留持物锁与零到货。"
+        }
+      ],
+      "remaining_gaps": [
+        "真实P01图像/固件反馈→P04/P06度量→P07/P08证据链尚缺可信采集、单位和当前动作绑定（P04接口、P07-C0-01、P08-C0-01）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E05",
+      "title": "坐标全链失效",
+      "packages": [
+        "P02",
+        "P03",
+        "P06",
+        "P08"
+      ],
+      "requirements": [
+        "G06",
+        "G07",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p02_service.ServiceTests.test_T05_motion_invalidates_purpose_and_keeps_shared_occupancy",
+          "level": "component",
+          "real_packages": [
+            "P02"
+          ],
+          "proves": "P02移动后清用途几何，保留共享占用。"
+        },
+        {
+          "id": "test_p03_service.ServiceTests.test_motion_epoch_clears_old_geometry_and_pending_commands",
+          "level": "component",
+          "real_packages": [
+            "P03"
+          ],
+          "proves": "P03消费运动代次并清旧路径/待发指令。"
+        },
+        {
+          "id": "test_p06_service.ServiceTests.test_T04_base_motion_invalidates_entire_plan_but_never_erases_occupancy",
+          "level": "component",
+          "real_packages": [
+            "P06"
+          ],
+          "proves": "P06整条抓放计划失效，实际占用不清空。"
+        },
+        {
+          "id": "test_p08_targets.TargetsTests.test_R01_wrong_region_old_mapping_and_motion_rejected",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "P08拒绝旧运动代次放置目标。"
+        },
+        {
+          "id": "test_p08_observation.SpaceTests.test_R03_absence_and_timeout_cannot_clear_space",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "缺帧或超时不能清掉真实/未知占用。"
+        },
+        {
+          "id": "test_p00_rules.RulesTests.test_R04_both_consumers_require_same_space_version",
+          "level": "component",
+          "real_packages": [
+            "P00"
+          ],
+          "proves": "C0要求导航/机械臂消费者同空间版本。"
+        }
+      ],
+      "remaining_gaps": [
+        "此行尚无一条真实P02通知同时驱动P03/P06/P08的全链广播测试；P02-C0-02通知、同快照提交和活动路径撤销正式接线待完成。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E06",
+      "title": "到货和布局分账",
+      "packages": [
+        "P08",
+        "P09",
+        "P10B"
+      ],
+      "requirements": [
+        "G03",
+        "G14",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_real_release_duplicate_layout_failure_counts_once_and_keeps_empty_unready",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P07",
+            "P08",
+            "P09",
+            "P10B"
+          ],
+          "proves": "正确区实际分离形成一次到货；布局仍0/UNKNOWN，重复事务不重复到货。"
+        },
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_unknown_sqlite_commit_reconciles_exact_release_without_replaying_action",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P07",
+            "P08",
+            "P09",
+            "P10B"
+          ],
+          "proves": "真实SQLite锁导致UNKNOWN；精确读回后发布同一释放一次，期间不重抓/重放。"
+        },
+        {
+          "id": "test_p09_persistence_boundaries.PersistenceBoundaryTests.test_renamed_same_inventory_replacement_does_not_add_arrival",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "同原库存重命名实体仍去重；存储是C0假对象。"
+        },
+        {
+          "id": "test_p10b_storage.StorageTests.test_T04_atomic_delivery_dedup_and_rebuild_keep_original_receipt",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "真实SQLite重复/重建保留原到货键与凭据。"
+        }
+      ],
+      "remaining_gaps": [
+        "已连接真实释放事务，不把完整布局重建或物理识别身份宣称已联通；跨重启工作单/回调索引和非到货临时释放仍受P09-C0-02/04、P08-C0-04限制。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E07",
+      "title": "三种布局",
+      "packages": [
+        "P06",
+        "P08",
+        "P09"
+      ],
+      "requirements": [
+        "G10",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p06_support.SupportTests.test_T07_exact_80_percent_is_not_strict_quality",
+          "level": "component",
+          "real_packages": [
+            "P06"
+          ],
+          "proves": "实际支持面积下界精确80%不通过。"
+        },
+        {
+          "id": "test_p06_support.SupportTests.test_T07_error_crossing_boundary_and_complete_overlap",
+          "level": "component",
+          "real_packages": [
+            "P06"
+          ],
+          "proves": "误差跨越80%门槛不通过，确定完整支持可通过。"
+        },
+        {
+          "id": "test_p08_recovery.LayoutTests.test_R08_V2_dual_support_gap_and_height_checked",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "V2必须双底共同支撑，底部间隙/高差/顶砖偏移不合格。"
+        },
+        {
+          "id": "test_p08_recovery.LayoutTests.test_R08_V3_exact80_rejected_actual_overlap_not_claimed_ratio",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "P08重算真实轮廓交叠，不信输入声称的比率。"
+        },
+        {
+          "id": "test_p09_integration.SimulationTests.test_whole_match_fake_clock_all_layouts_and_arbitrary_categories",
+          "level": "simulated_orchestration",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09假时钟分别跑V1/V2/V3蛋糕+九砖，条件估分/普通顺序。"
+        },
+        {
+          "id": "test_p09_scoring.ScoreTests.test_unknown_fields_stay_unresolved_and_known_part_kept",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "估分未知字段保持未决，不补成确定分。"
+        }
+      ],
+      "remaining_gaps": [
+        "P08布局事实仍由模拟度量/前缀质量提供；正式实际支撑/误差/接触输入未冻结（P06-C0-04、P08-C0-07、P09-C0-03）。",
+        "本行分别检查配置布局和估分；未提供真实跨模块估分变更期间策略保持不变的现场证据。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E08",
+      "title": "倒塌禁行",
+      "packages": [
+        "P03",
+        "P04",
+        "P08",
+        "P10A"
+      ],
+      "requirements": [
+        "G08",
+        "P11-T05"
+      ],
+      "cases": [
+        {
+          "id": "test_p08_observation.StillnessTests.test_T05_499ms_refused_500ms_certificate_is_C0_valid",
+          "level": "component",
+          "real_packages": [
+            "P08",
+            "P00"
+          ],
+          "proves": "499ms拒绝、500ms连续覆盖才能出合约有效静止证书。"
+        },
+        {
+          "id": "test_p08_observation.StillnessTests.test_T05_duplicate_gap_occlusion_reset_window",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "旧帧/缺帧/遮挡重置静止窗口。"
+        },
+        {
+          "id": "test_p08_observation.StillnessTests.test_T05_slow_drift_rotation_and_changed_support_reset",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "缓慢漂移/旋转/支撑变化不能累积静止。"
+        },
+        {
+          "id": "test_p04_service.ServiceTests.test_T04_duplicate_frames_do_not_confirm_and_offer_no_new_stillness_evidence",
+          "level": "component",
+          "real_packages": [
+            "P04"
+          ],
+          "proves": "视觉重复帧不提供新静止证据。"
+        },
+        {
+          "id": "test_p03_recovery.RecoveryTests.test_T04_499ms_blocks_navigation_precision_and_observation_micromotion",
+          "level": "component",
+          "real_packages": [
+            "P03"
+          ],
+          "proves": "499ms时普通导航、精停和补拍微动都禁行。"
+        },
+        {
+          "id": "test_p10a_permissions.PermissionTests.test_T05_stillness_500ms_is_necessary_but_not_sufficient",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "500ms证书仍不能替代持物/姿态/其他安全条件。"
+        },
+        {
+          "id": "test_p08_review.ReviewTests.test_anomaly_requests_stop_before_any_state_read",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "异常先提出撤销，不能等状态读盘。"
+        }
+      ],
+      "remaining_gaps": [
+        "证书各消费者仍分别使用合成输入，尚未装配P08异常→P10A/P01全来源撤销→P03/P06重检的完整广播与真实停止取证（P08-C0-06）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E09",
+      "title": "逐块重建",
+      "packages": [
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "requirements": [
+        "G09",
+        "P11-T05"
+      ],
+      "cases": [
+        {
+          "id": "test_p08_recovery.LayoutTests.test_T06_center_first_kept_but_old_second_cannot_be_inherited",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "保留合格中心首块只记1，旧第二块不能继承。"
+        },
+        {
+          "id": "test_p08_recovery.LayoutTests.test_T08_repeated_failure_replays_zero_one_two_three",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "再次失败重新0→1→2→3。"
+        },
+        {
+          "id": "test_p08_recovery.RecoveryTests.test_T07_held_unknown_or_missing_inventory_blocks_next_grasp",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "手上/UNKNOWN/库存缺失阻止下一抓。"
+        },
+        {
+          "id": "test_p09_recovery.RecoveryTests.test_T06_center_first_then_actual_second_third_and_no_arrival_changes",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09保持原到货账，只按本轮实际重放推进2/3。"
+        },
+        {
+          "id": "test_p09_recovery.RecoveryTests.test_failure_resets_only_on_new_physical_event_and_budget_survives",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "只有新物理失败清进度；重复失败不多加代次，预算保留。"
+        },
+        {
+          "id": "test_p10b_recovery.RecoveryTests.test_T04_recovery_keeps_arrival_budget_and_layout",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "真实存储恢复保留到货、预算与布局。"
+        }
+      ],
+      "remaining_gaps": [
+        "临时安置→真实非到货释放→重新抓取完整循环尚不能用C0 1.0.0提交（P08-C0-03/04）；布局实际重放/累计预算的原子检查点索引仍待P09-C0-02/05。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E10",
+      "title": "截止独立性",
+      "packages": [
+        "P01",
+        "P09",
+        "P10A",
+        "P10B"
+      ],
+      "requirements": [
+        "G11",
+        "G12",
+        "P11-T03",
+        "P11-R03"
+      ],
+      "cases": [
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_deadline_stops_real_gateway_while_sqlite_writer_and_business_are_blocked",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P01",
+            "P10A",
+            "P10B"
+          ],
+          "proves": "真实P01网关/P10A独立监督/SQLite外部锁：写者与业务读盘阻塞时原截止停止；缓存/旧实例不复活，HELD不统一关泵。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_deadline_stops_without_cleanup_commands",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09截止后不再派清理或补动作。"
+        },
+        {
+          "id": "test_p07_behavior.BehaviorTests.test_T05_deadline_sends_no_extra_motion",
+          "level": "component",
+          "real_packages": [
+            "P07"
+          ],
+          "proves": "P07截止不追加收臂或抓取动作。"
+        },
+        {
+          "id": "test_p08_execution.ExecutionTests.test_timeout_cancels_without_additional_pump_off_or_withdraw",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "P08超时不追加关泵/撤离。"
+        },
+        {
+          "id": "test_p10a_supervision.SupervisionTests.test_T03_concurrent_motion_sources_are_mutually_exclusive",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "P10A导航与精停许可竞争互斥；属于控制竞争组件证据，不计入19个回放场景。"
+        }
+      ],
+      "remaining_gaps": [
+        "此窄边界业务阻塞为真实SQLite read工作线程，未把P09完整生产循环纳入；普通线程不证明进程/GIL卡死隔离或硬件实时延迟。",
+        "平滑器后唯一输出、机器人下位机fencing、串口排他及携物停止/取消能力仍需P01/P10A正式适配和实机验证。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E11",
+      "title": "同局恢复扣时",
+      "packages": [
+        "P09",
+        "P10A",
+        "P10B"
+      ],
+      "requirements": [
+        "G13",
+        "P11-T06"
+      ],
+      "cases": [
+        {
+          "id": "test_p10a_integration.IntegrationTests.test_real_sqlite_recovery_registration_retains_original_deadline",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P10A",
+            "P10B"
+          ],
+          "proves": "真实P10A与SQLite恢复登记保留原截止，190秒后只余410秒，复核前无许可。"
+        },
+        {
+          "id": "test_p10b_recovery.RecoveryTests.test_T01_180_then_10_seconds_restores_410_using_injected_policy",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "420秒快照再经过10秒后恢复410，统一注入时基。"
+        },
+        {
+          "id": "test_p10b_recovery.RecoveryTests.test_T03_cross_boot_old_run_and_wrong_original_deadline_fail_closed",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "跨boot/旧局/篡改原截止保持停止。"
+        },
+        {
+          "id": "test_p09_recovery.RecoveryTests.test_restart_roundtrip_retains_exit_pending_identity_and_deadline",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09模拟检查点保留驶出/pending/原截止，旧许可不复用。"
+        },
+        {
+          "id": "test_p09_recovery.RecoveryTests.test_resume_requires_new_controller_and_fresh_physical_review",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "恢复需要新控制身份与新现场复核。"
+        }
+      ],
+      "remaining_gaps": [
+        "P09 SimulationJournal仍为模拟检查点；生产pending/回调/工作单索引与P07/P08持物重绑定尚未入P10B统一事务（P09-C0-02、P07-C0-06/07、P08-C0-05）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E12",
+      "title": "物理与提交中断",
+      "packages": [
+        "P07",
+        "P08",
+        "P10A",
+        "P10B"
+      ],
+      "requirements": [
+        "G04",
+        "G13",
+        "P11-T04",
+        "P11-T06"
+      ],
+      "cases": [
+        {
+          "id": "test_p10b_boundaries.BoundaryTests.test_T02_real_process_exit_after_intent_commit_keeps_intent",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "真实子进程在提交意图后退出；恢复保留意图但不重发。"
+        },
+        {
+          "id": "test_p10b_boundaries.BoundaryTests.test_T02_real_process_exit_after_uncommitted_snapshot_rolls_back",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "真实子进程死于未提交事务；SQLite回滚，不发布半状态。"
+        },
+        {
+          "id": "test_p10b_recovery.RecoveryTests.test_T02_each_interruption_boundary_demands_review_never_replays",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "记录缺成功不当作未发生，各中断边界均要求复核。"
+        },
+        {
+          "id": "test_p07_boundaries.RecoveryTests.test_T06_file_checkpoint_restart_does_not_replay",
+          "level": "component",
+          "real_packages": [
+            "P07"
+          ],
+          "proves": "P07文件测试检查点重启不重放动作。"
+        },
+        {
+          "id": "test_p08_execution.ExecutionTests.test_restart_and_old_context_never_replays_commands",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "P08旧阶段/实例不能自动重放。"
+        },
+        {
+          "id": "test_p11_scenarios.ActualBoundaryTests.test_unknown_sqlite_commit_reconciles_exact_release_without_replaying_action",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P07",
+            "P08",
+            "P09",
+            "P10B"
+          ],
+          "proves": "真实存储提交UNKNOWN时保留HELD，精确读回后只发布一次，不重做物理释放。"
+        },
+        {
+          "id": "test_p10a_recovery.RecoveryTests.test_T06_registration_does_not_replace_old_action_stop",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "恢复登记不代替旧动作停止和队列确认。"
+        }
+      ],
+      "remaining_gaps": [
+        "真实进程退出只覆盖持久化进程；P07/P08/P09真实动作中断点与生产检查点并未整体实现，须冻结P09-C0-02及P08-C0-05后重做全链崩溃矩阵。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E13",
+      "title": "清理与结束锁",
+      "packages": [
+        "P10A",
+        "P10B"
+      ],
+      "requirements": [
+        "G14",
+        "P11-T06"
+      ],
+      "cases": [
+        {
+          "id": "test_p10b_cleanup.CleanupTests.test_T06_deadline_closes_then_cleans_only_named_run",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "正常到时、停止确认、封存及关闭写者后只清命名运行目录。"
+        },
+        {
+          "id": "test_p10b_cleanup.CleanupTests.test_T06_early_emergency_and_unknown_stop_are_retained",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "提前结束/急停/停止未知均保留。"
+        },
+        {
+          "id": "test_p10b_cleanup.CleanupTests.test_T06_restarted_run_retained_but_manual_closed_run_can_be_removed",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "曾重启局不自动删；显式手动清理条件独立。"
+        },
+        {
+          "id": "test_p10b_boundaries.BoundaryTests.test_T07_directory_empty_but_pending_marker_never_reopens_match",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "目录已删但结束标记未完成时仍不能重开600秒。"
+        },
+        {
+          "id": "test_p10a_boundaries.BoundaryTests.test_end_requires_stop_seal_and_closed_writers_and_stays_ended",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "P10A可靠结束需停止/封存/写者关闭全部成立。"
+        },
+        {
+          "id": "test_p10b_cleanup.CleanupTests.test_T07_recovery_before_cleanup_permanently_prevents_auto_deletion",
+          "level": "component",
+          "real_packages": [
+            "P10B"
+          ],
+          "proves": "恢复/清理竞争留下不可自动删除事实。"
+        }
+      ],
+      "remaining_gaps": [
+        "此行分别验证P10A/P10B生命周期；实际停止后物理证据→seal→writer close→accept_end完整正式收尾未装配；目标Linux文件锁/fsync/断电测试未验证。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E14",
+      "title": "完成及驶出",
+      "packages": [
+        "P02",
+        "P03",
+        "P09"
+      ],
+      "requirements": [
+        "G03",
+        "G06",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p02_geometry.GeometryTests.test_T03_carried_envelope_and_unknown_holding",
+          "level": "component",
+          "real_packages": [
+            "P02"
+          ],
+          "proves": "携物扩大包络，未知持物不能取空载几何。"
+        },
+        {
+          "id": "test_p03_geometry.ExitTests.test_T06_center_outside_tail_touching_is_not_exit",
+          "level": "component",
+          "real_packages": [
+            "P03"
+          ],
+          "proves": "中心在区外但尾部仍接触时不算完全驶出。"
+        },
+        {
+          "id": "test_p03_geometry.ExitTests.test_T06_return_reexit_and_restart_share_dedup_key",
+          "level": "component",
+          "real_packages": [
+            "P03"
+          ],
+          "proves": "返回/再次驶出/重启保持同局驶出去重键。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_T08_exit_once_survives_return_and_repeat",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09一次接受驶出后重复/返A不重复记账。"
+        },
+        {
+          "id": "test_p09_recovery.RecoveryTests.test_T05_ten_arrivals_not_complete_with_held_or_repair",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "10到货仍持物或待修复时不报全完成。"
+        }
+      ],
+      "remaining_gaps": [
+        "P03实际ExitEvidence→P09→P10B同一事务及跨重启一次计分未联通；C0缺生产驶出历史索引（P03-C0-06、P09-C0-02）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E15",
+      "title": "数据失效和旧代",
+      "packages": [
+        "P00",
+        "P01",
+        "P03",
+        "P04",
+        "P09"
+      ],
+      "requirements": [
+        "G04",
+        "G06",
+        "G11",
+        "P11-R04",
+        "P11-R03"
+      ],
+      "cases": [
+        {
+          "id": "test_p00_rules.RulesTests.test_T02_old_run_instance_epoch_and_expired_no_update",
+          "level": "component",
+          "real_packages": [
+            "P00"
+          ],
+          "proves": "C0拒绝旧局/旧实例/旧控制代次/过期。"
+        },
+        {
+          "id": "test_p01_health.HealthTests.test_T02_stale_observation_revokes",
+          "level": "component",
+          "real_packages": [
+            "P01"
+          ],
+          "proves": "设备观测超时撤销健康。"
+        },
+        {
+          "id": "test_p01_gateway.GatewayTests.test_T06_health_recovery_does_not_reinstall_old_permit",
+          "level": "component",
+          "real_packages": [
+            "P01"
+          ],
+          "proves": "流恢复不重新安装旧许可。"
+        },
+        {
+          "id": "test_p04_service.ServiceTests.test_R01_late_result_rechecked_after_backend_and_does_not_replace_latest",
+          "level": "component",
+          "real_packages": [
+            "P04"
+          ],
+          "proves": "识别后重新检查时效/身份，迟到结果不覆盖最新事实。"
+        },
+        {
+          "id": "test_p03_integration.IntegrationTests.test_T02_real_P01_gateway_rejects_old_velocity_after_handoff",
+          "level": "boundary_integration",
+          "real_packages": [
+            "P01",
+            "P03"
+          ],
+          "proves": "真实P03→P01网关交接后旧速度回调不得再发送。"
+        },
+        {
+          "id": "test_p09_engine.EngineTests.test_stale_action_and_duplicate_start_do_not_reissue",
+          "level": "component",
+          "real_packages": [
+            "P09"
+          ],
+          "proves": "P09旧动作/重复开始不派重单。"
+        },
+        {
+          "id": "test_p08_review.ReviewTests.test_old_second_round_cannot_mutate_count_before_rejection",
+          "level": "component",
+          "real_packages": [
+            "P08"
+          ],
+          "proves": "旧恢复轮次的第二块不能先改新布局再拒绝。"
+        },
+        {
+          "id": "test_p01_gateway.GatewayTests.test_T04_competing_sources_require_explicit_revocation",
+          "level": "component",
+          "real_packages": [
+            "P01"
+          ],
+          "proves": "P01网关竞争来源必须显式撤销后交接；属于控制竞争组件证据，不代表硬件排他或新的回放场景。"
+        }
+      ],
+      "remaining_gaps": [
+        "正式相机/TF/ROS时钟转换、跨进程旧发布者隔离与所有消费者异常广播仍需P01/P02/P04/P10A适配；此行含P03→P01窄边界，不是全生产数据链。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    },
+    {
+      "id": "E16",
+      "title": "人工调试约束",
+      "packages": [
+        "P09",
+        "P10A",
+        "P10B"
+      ],
+      "requirements": [
+        "G16",
+        "P11-R04"
+      ],
+      "cases": [
+        {
+          "id": "test_p10a_recovery.RecoveryTests.test_T07_referee_limit_first_lift_and_duplicate_events",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "仅裁判许可、最多3次、首次离地后拒绝、重复事件不多计。"
+        },
+        {
+          "id": "test_p10a_recovery.RecoveryTests.test_T07_debug_resume_needs_relocalization_reread_and_new_control_epoch",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "调试后需新定位/重读板/新控制代次，原截止不变。"
+        },
+        {
+          "id": "test_p10a_updates.UpdateTests.test_T07_debug_offline_review_requires_return_to_A_and_registered_new_instance",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "回A与新实例复核条件均必需。"
+        },
+        {
+          "id": "test_p10a_recovery.RecoveryTests.test_restart_does_not_reset_debug_or_lift_history_to_permissive_defaults",
+          "level": "component",
+          "real_packages": [
+            "P10A"
+          ],
+          "proves": "代码重启缺调试/离地历史不补0或false放行。"
+        }
+      ],
+      "remaining_gaps": [
+        "E16当前只有P10A离线组件证据，不能称P09/P10B已完整联通；C0无人工调试计数/首次离地/已消费身份，P10B register_recovery固定ever_restarted，不可冒充调试登记（P10A-C0-05、P09-C0-02）。",
+        "ROS/真实控制/物理动作/真实600秒整局均未验证；所有观察与运输边界为显式SIMULATED输入。"
+      ]
+    }
+  ]
+}

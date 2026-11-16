@@ -1,0 +1,15 @@
+{
+  "version": "p09-sim-config",
+  "origin": "simulated",
+  "measurement": "simulated",
+  "navigation_s": 2.0,
+  "observation_s": 1.0,
+  "grasp_s": 2.0,
+  "placement_s": 2.0,
+  "recovery_s": 2.0,
+  "stop_margin_s": 1.0,
+  "recovery_attempts": 3,
+  "recovery_total_s": 30.0,
+  "observation_attempts": 3,
+  "evidence_age_s": 2.0
+}

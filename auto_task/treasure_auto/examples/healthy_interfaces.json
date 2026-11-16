@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "note": "手工构造的离线接口示例，未连接机器人，不代表实机通过。",
+  "environment": {
+    "os_pretty_name": "Ubuntu 20.04 (example only)",
+    "python_version": "3.8 (example only)",
+    "machine": "x86_64 (example only)",
+    "ros_distro": "noetic"
+  },
+  "topics": {
+    "/odom": {"type": "nav_msgs/Odometry", "publishers": ["/spark_base_server"], "subscribers": [], "received_count": 30, "last_message_age_s": 0.05},
+    "/scan": {"type": "sensor_msgs/LaserScan", "publishers": ["/ydlidar_node"], "subscribers": [], "received_count": 15, "last_message_age_s": 0.1},
+    "/camera/color/image_raw": {"type": "sensor_msgs/Image", "publishers": ["/camera/realsense2_camera"], "subscribers": [], "received_count": 20, "last_message_age_s": 0.05},
+    "/SwiftproState_topic": {"type": "swiftpro/SwiftproState", "publishers": ["/swiftpro_write_node"], "subscribers": [], "received_count": 40, "last_message_age_s": 0.05},
+    "/cmd_vel": {"type": "geometry_msgs/Twist", "publishers": [], "subscribers": ["/spark_base_server"], "subscriber_types": {"/spark_base_server": "geometry_msgs/Twist"}},
+    "/position_write_topic": {"type": "swiftpro/position", "publishers": [], "subscribers": ["/swiftpro_write_node"], "subscriber_types": {"/swiftpro_write_node": "swiftpro/position"}},
+    "/pump_topic": {"type": "swiftpro/status", "publishers": [], "subscribers": ["/swiftpro_write_node"], "subscriber_types": {"/swiftpro_write_node": "swiftpro/status"}}
+  },
+  "transforms": {
+    "odom->base_footprint": {"available": true, "age_s": 0.05},
+    "base_footprint->laser_frame": {"available": true, "age_s": null},
+    "base_footprint->camera_link": {"available": true, "age_s": null}
+  }
+}

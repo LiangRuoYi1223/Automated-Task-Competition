@@ -1,0 +1,8 @@
+<launch>
+  <!-- Only simulated replay. No driver, controller, publisher or robot launch. -->
+  <arg name="layout" default="V1"/>
+  <arg name="scenario" default="nominal"/>
+  <node pkg="treasure_auto" type="run_match_offline.py" name="match_offline"
+        output="screen" required="true"
+        args="--mode offline --layout $(arg layout) --scenario $(arg scenario)"/>
+</launch>

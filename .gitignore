@@ -1,0 +1,47 @@
+# Publish only the maintained code workspace.
+/*
+!/.gitignore
+!/.gitattributes
+!/auto_task/
+
+# Documentation and reports stay local.
+*.md
+*.markdown
+*.mdx
+*.doc
+*.docx
+*.pdf
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+/auto_task/docs/
+/auto_task/data/
+/auto_task/outputs/
+**/verification/*summary*.json
+**/verification/*concurrent*.json
+**/verification/simulation_V*.json
+**/acceptance/latest/
+/auto_task/treasure_auto/tests/integration/packaging/summary.json
+
+# Build products, local environments and runtime output.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+devel/
+install/
+dist/
+**/artifacts/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+~$*
+.env
+.env.*
+!.env.example

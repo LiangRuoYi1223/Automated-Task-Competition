@@ -1,0 +1,29 @@
+{
+  "format": 1,
+  "contract_version": "1.0.0",
+  "measurement": "unmeasured",
+  "evidence": [],
+  "base_frame": null,
+  "mapping_source": null,
+  "localization_source": null,
+  "localization": {
+    "min_samples": null,
+    "confirmation_s": null,
+    "max_gap_s": null,
+    "max_age_s": null,
+    "max_skew_s": null,
+    "max_error_m": null,
+    "max_error_rad": null,
+    "jump_m": null,
+    "jump_rad": null,
+    "initial_m": null,
+    "initial_rad": null,
+    "stable_m": null,
+    "stable_rad": null
+  },
+  "footprint": {
+    "body": null,
+    "carried": null,
+    "margin_m": null
+  }
+}

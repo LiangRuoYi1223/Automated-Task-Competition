@@ -1,0 +1,525 @@
+{
+  "format": 1,
+  "contract_version": "1.0.0",
+  "map_version": "example-unmeasured-v1",
+  "waypoints": [
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "A_start",
+      "purpose": "start",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "classification_observe",
+      "purpose": "observe",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "central_north",
+      "purpose": "grasp",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "central_east",
+      "purpose": "grasp",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "central_south",
+      "purpose": "grasp",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "central_west",
+      "purpose": "grasp",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "park_A",
+      "purpose": "place",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "park_B",
+      "purpose": "place",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "park_C",
+      "purpose": "place",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "park_D",
+      "purpose": "place",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    },
+    {
+      "envelope": {
+        "run_id": "sim-run",
+        "instance_id": "sim-instance",
+        "control_epoch": 1,
+        "producer": "P02",
+        "event_id": "e1",
+        "sequence": 1000,
+        "request_id": null,
+        "action_id": null,
+        "target_id": null,
+        "emitted_at": {
+          "seconds": 10,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "expires_at": {
+          "seconds": 20,
+          "basis": "monotonic",
+          "clock_id": "sim-clock",
+          "boot_id": "sim-boot"
+        },
+        "versions": {
+          "config": "sim-config",
+          "map": "example-unmeasured-v1",
+          "calibration": null,
+          "model": null,
+          "mapping": null,
+          "layout": null,
+          "space": 0
+        },
+        "origin": "simulated",
+        "layout_recovery_round": null,
+        "rebuild_generation": null,
+        "base_motion_epoch": 0
+      },
+      "name": "intermediate",
+      "purpose": "transit",
+      "pose": null,
+      "valid": "unknown",
+      "reason": {
+        "code": "unconfigured",
+        "field": "pose",
+        "detail": "UNMEASURED sample; survey required"
+      }
+    }
+  ],
+  "waypoint_evidence": []
+}

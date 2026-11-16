@@ -1,0 +1,1551 @@
+{
+  "contract_version": "1.0.0",
+  "records": {
+    "Reason": {
+      "logical_owner": "P00",
+      "fields": {
+        "code": "ErrorCode",
+        "field": "str",
+        "detail": "str"
+      }
+    },
+    "ClockStamp": {
+      "logical_owner": "P00",
+      "fields": {
+        "seconds": "float",
+        "basis": "ClockBasis",
+        "clock_id": "str",
+        "boot_id": "Optional[str]"
+      }
+    },
+    "Versions": {
+      "logical_owner": "P00",
+      "fields": {
+        "config": "str",
+        "map": "Optional[str]",
+        "calibration": "Optional[str]",
+        "model": "Optional[str]",
+        "mapping": "Optional[str]",
+        "layout": "Optional[str]",
+        "space": "Optional[int]"
+      }
+    },
+    "Envelope": {
+      "logical_owner": "P00",
+      "fields": {
+        "run_id": "str",
+        "instance_id": "str",
+        "control_epoch": "int",
+        "producer": "Owner",
+        "event_id": "str",
+        "sequence": "int",
+        "request_id": "Optional[str]",
+        "action_id": "Optional[str]",
+        "target_id": "Optional[str]",
+        "emitted_at": "ClockStamp",
+        "expires_at": "ClockStamp",
+        "versions": "Versions",
+        "origin": "Origin",
+        "layout_recovery_round": "Optional[int]",
+        "rebuild_generation": "Optional[int]",
+        "base_motion_epoch": "Optional[int]"
+      }
+    },
+    "ArmPoint": {
+      "logical_owner": "P00",
+      "fields": {
+        "frame_id": "str",
+        "x": "float",
+        "y": "float",
+        "z": "float",
+        "unit": "str",
+        "error_mm": "float"
+      }
+    },
+    "MapPose": {
+      "logical_owner": "P00",
+      "fields": {
+        "frame_id": "str",
+        "x": "float",
+        "y": "float",
+        "yaw": "float",
+        "position_unit": "str",
+        "angle_unit": "str",
+        "error_m": "float",
+        "error_rad": "float"
+      }
+    },
+    "EvidenceRef": {
+      "logical_owner": "P00",
+      "fields": {
+        "evidence_id": "str",
+        "run_id": "str",
+        "target_id": "Optional[str]",
+        "action_id": "Optional[str]",
+        "kind": "EvidenceKind",
+        "origin": "Origin",
+        "captured_at": "Optional[ClockStamp]",
+        "received_at": "ClockStamp",
+        "valid_until": "ClockStamp",
+        "uri": "str",
+        "sha256": "Optional[str]"
+      }
+    },
+    "ActionResult": {
+      "logical_owner": "P00",
+      "fields": {
+        "status": "Outcome",
+        "phase": "str",
+        "reason": "Optional[Reason]",
+        "accepted": "Fact",
+        "submitted": "Fact",
+        "echoed": "Fact",
+        "physical": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]",
+        "elapsed_s": "float"
+      }
+    },
+    "HoldingSnapshot": {
+      "logical_owner": "P07",
+      "fields": {
+        "state": "Holding",
+        "target_id": "Optional[str]",
+        "tool_offset": "Optional[ArmPoint]",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "ParameterSpec": {
+      "logical_owner": "P00",
+      "fields": {
+        "name": "str",
+        "owner": "Owner",
+        "unit": "str",
+        "value": "Optional[float]",
+        "minimum": "Optional[float]",
+        "maximum": "Optional[float]",
+        "range_source": "Optional[str]",
+        "measurement": "Measurement",
+        "acquisition_method": "str",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "ConsumerContext": {
+      "logical_owner": "P00",
+      "fields": {
+        "run_id": "str",
+        "instance_id": "str",
+        "control_epoch": "int",
+        "now": "ClockStamp",
+        "versions": "Versions",
+        "request_id": "Optional[str]",
+        "action_id": "Optional[str]",
+        "target_id": "Optional[str]",
+        "layout_recovery_round": "Optional[int]",
+        "rebuild_generation": "Optional[int]",
+        "base_motion_epoch": "Optional[int]",
+        "origin": "Origin"
+      }
+    },
+    "RunContext": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "state": "RunState",
+        "start_signal_id": "str",
+        "started_at": "ClockStamp",
+        "deadline": "ClockStamp",
+        "ever_restarted": "bool"
+      }
+    },
+    "ControlPermit": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "permit_id": "str",
+        "source": "MotionSource",
+        "purpose": "str",
+        "prerequisite_evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "Capability": {
+      "logical_owner": "P01",
+      "fields": {
+        "name": "str",
+        "status": "Fact",
+        "reason": "Optional[Reason]",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "HealthSnapshot": {
+      "logical_owner": "P01",
+      "fields": {
+        "envelope": "Envelope",
+        "capabilities": "Tuple[Capability, ...]"
+      }
+    },
+    "BaseCommand": {
+      "logical_owner": "P01",
+      "fields": {
+        "envelope": "Envelope",
+        "permit": "ControlPermit",
+        "intent_receipt_id": "str",
+        "linear_m_s": "float",
+        "angular_rad_s": "float",
+        "source": "MotionSource"
+      }
+    },
+    "ArmCommand": {
+      "logical_owner": "P01",
+      "fields": {
+        "envelope": "Envelope",
+        "permit": "ControlPermit",
+        "intent_receipt_id": "str",
+        "phase": "Phase",
+        "target": "ArmPoint",
+        "speed_mm_s": "float",
+        "speed_unit": "str",
+        "timeout_s": "float",
+        "preconditions": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "PumpCommand": {
+      "logical_owner": "P01",
+      "fields": {
+        "envelope": "Envelope",
+        "permit": "ControlPermit",
+        "intent_receipt_id": "str",
+        "enabled": "bool",
+        "phase": "Phase",
+        "holding": "HoldingSnapshot"
+      }
+    },
+    "ActionEvent": {
+      "logical_owner": "P00",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult"
+      }
+    },
+    "StopRequest": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "reason": "Reason",
+        "holding": "HoldingSnapshot"
+      }
+    },
+    "StopReport": {
+      "logical_owner": "P01",
+      "fields": {
+        "envelope": "Envelope",
+        "requested": "Fact",
+        "submitted": "Fact",
+        "echoed": "Fact",
+        "physically_stopped": "Fact",
+        "old_queue_empty": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "Point2": {
+      "logical_owner": "P00",
+      "fields": {
+        "x": "float",
+        "y": "float"
+      }
+    },
+    "RegionBoundary": {
+      "logical_owner": "P02",
+      "fields": {
+        "area": "Area",
+        "frame_id": "str",
+        "polygon_m": "Tuple[Point2, ...]",
+        "placement_center": "MapPose",
+        "error_m": "float"
+      }
+    },
+    "MapMetadata": {
+      "logical_owner": "P02",
+      "fields": {
+        "envelope": "Envelope",
+        "map_version": "str",
+        "image_uri": "str",
+        "resolution_m_per_cell": "float",
+        "origin": "MapPose",
+        "regions": "Tuple[RegionBoundary, ...]",
+        "measurement": "Measurement"
+      }
+    },
+    "LocalizationSnapshot": {
+      "logical_owner": "P02",
+      "fields": {
+        "envelope": "Envelope",
+        "pose": "Optional[MapPose]",
+        "trusted": "Fact",
+        "base_motion_epoch": "int",
+        "evidence": "Tuple[EvidenceRef, ...]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "WaypointQuery": {
+      "logical_owner": "P02",
+      "fields": {
+        "envelope": "Envelope",
+        "name": "str",
+        "purpose": "str"
+      }
+    },
+    "WaypointResult": {
+      "logical_owner": "P02",
+      "fields": {
+        "envelope": "Envelope",
+        "name": "str",
+        "purpose": "str",
+        "pose": "Optional[MapPose]",
+        "valid": "Fact",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "PixelPoint": {
+      "logical_owner": "P04",
+      "fields": {
+        "u": "float",
+        "v": "float"
+      }
+    },
+    "PixelTransform": {
+      "logical_owner": "P04",
+      "fields": {
+        "crop_u": "float",
+        "crop_v": "float",
+        "scale_x": "float",
+        "scale_y": "float",
+        "pad_u": "float",
+        "pad_v": "float"
+      }
+    },
+    "ImageObservation": {
+      "logical_owner": "P04",
+      "fields": {
+        "envelope": "Envelope",
+        "observation_id": "str",
+        "image": "EvidenceRef",
+        "width": "int",
+        "height": "int",
+        "encoding": "str",
+        "camera_frame": "str",
+        "distortion": "Distortion",
+        "capture_pose": "Optional[MapPose]",
+        "preprocessing": "PixelTransform"
+      }
+    },
+    "TopSurface": {
+      "logical_owner": "P04",
+      "fields": {
+        "corners": "Tuple[PixelPoint, PixelPoint, PixelPoint, PixelPoint]",
+        "contour": "Tuple[PixelPoint, ...]",
+        "image_width": "int",
+        "image_height": "int",
+        "frame_id": "str",
+        "distortion": "Distortion",
+        "error_px": "float",
+        "plane_basis": "PlaneBasis",
+        "height_mm": "Optional[float]",
+        "visibility": "Visibility",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "TargetObservation": {
+      "logical_owner": "P04",
+      "fields": {
+        "observation_id": "str",
+        "target_id": "Optional[str]",
+        "identity_confirmed": "Fact",
+        "category": "Optional[Category]",
+        "top": "Optional[TopSurface]",
+        "visibility": "Visibility",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "ToolObservation": {
+      "logical_owner": "P04",
+      "fields": {
+        "envelope": "Envelope",
+        "target_id": "Optional[str]",
+        "rim": "Tuple[PixelPoint, ...]",
+        "center": "Optional[PixelPoint]",
+        "same_object": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "PerceptionRequest": {
+      "logical_owner": "P04",
+      "fields": {
+        "image": "ImageObservation",
+        "scene": "Scene",
+        "previous_targets": "Tuple[TargetObservation, ...]"
+      }
+    },
+    "PerceptionResult": {
+      "logical_owner": "P04",
+      "fields": {
+        "envelope": "Envelope",
+        "state": "ObservationState",
+        "targets": "Tuple[TargetObservation, ...]",
+        "tool": "Optional[ToolObservation]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "SlotAssignment": {
+      "logical_owner": "P05",
+      "fields": {
+        "area": "Area",
+        "category": "Category"
+      }
+    },
+    "BoardObservation": {
+      "logical_owner": "P04",
+      "fields": {
+        "image": "ImageObservation",
+        "template_version": "str",
+        "direction": "Fact",
+        "slots": "Tuple[SlotAssignment, ...]",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "MappingSnapshot": {
+      "logical_owner": "P05",
+      "fields": {
+        "envelope": "Envelope",
+        "mapping_version": "str",
+        "assignments": "Tuple[SlotAssignment, ...]",
+        "direction": "Fact",
+        "frozen_at": "ClockStamp",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "ClassificationRequest": {
+      "logical_owner": "P05",
+      "fields": {
+        "envelope": "Envelope",
+        "read_deadline": "ClockStamp",
+        "observations": "Tuple[BoardObservation, ...]",
+        "max_additional_views": "int"
+      }
+    },
+    "ClassificationResult": {
+      "logical_owner": "P05",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult",
+        "mapping": "Optional[MappingSnapshot]",
+        "additional_view": "Optional[WaypointQuery]"
+      }
+    },
+    "Occupancy": {
+      "logical_owner": "P08",
+      "fields": {
+        "target_id": "str",
+        "state": "OccupancyState",
+        "frame_id": "str",
+        "footprint_m": "Tuple[Point2, ...]",
+        "z_min_m": "float",
+        "z_max_m": "float",
+        "error_m": "float",
+        "support_ids": "Tuple[str, ...]",
+        "observed_at": "ClockStamp",
+        "visibility": "Visibility",
+        "area": "Optional[Area]",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "SpaceSnapshot": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "version": "int",
+        "occupancies": "Tuple[Occupancy, ...]"
+      }
+    },
+    "StillnessCertificate": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "covered_target_ids": "Tuple[str, ...]",
+        "coverage_polygon_m": "Tuple[Point2, ...]",
+        "frame_id": "str",
+        "capture_start": "ClockStamp",
+        "capture_end": "ClockStamp",
+        "observation_ids": "Tuple[str, ...]",
+        "continuous": "Fact",
+        "all_stopped": "Fact",
+        "max_adjacent_motion_m": "float",
+        "max_total_motion_m": "float",
+        "tolerance_m": "float",
+        "scene_epoch": "int",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "CameraCalibration": {
+      "logical_owner": "P06",
+      "fields": {
+        "version": "str",
+        "camera_frame": "str",
+        "intrinsics": "Tuple[float, ...]",
+        "distortion_coefficients": "Tuple[float, ...]",
+        "distortion": "Distortion",
+        "valid_domain": "str",
+        "fit_error_px": "float",
+        "validation_error_mm": "float",
+        "independent_validation": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "RigidTransform": {
+      "logical_owner": "P06",
+      "fields": {
+        "source_frame": "str",
+        "target_frame": "str",
+        "matrix": "Tuple[float, ...]",
+        "translation_unit": "str",
+        "version": "str"
+      }
+    },
+    "PathSegment": {
+      "logical_owner": "P06",
+      "fields": {
+        "phase": "Phase",
+        "target": "ArmPoint",
+        "speed_mm_s": "float",
+        "timeout_s": "float"
+      }
+    },
+    "GeometryRequest": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "observation": "TargetObservation",
+        "capture_pose": "MapPose",
+        "current_pose": "MapPose",
+        "calibration": "CameraCalibration",
+        "tool_transform": "RigidTransform",
+        "held_offset": "Optional[ArmPoint]",
+        "space": "SpaceSnapshot"
+      }
+    },
+    "GeometryPlan": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "path_id": "str",
+        "target": "ArmPoint",
+        "segments": "Tuple[PathSegment, ...]",
+        "reachable": "Fact",
+        "collision_free": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "GeometryResult": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult",
+        "plan": "Optional[GeometryPlan]"
+      }
+    },
+    "PlacementGeometryRequest": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "desired_brick_pose": "MapPose",
+        "region": "RegionBoundary",
+        "current_base_pose": "MapPose",
+        "actual_support_ids": "Tuple[str, ...]",
+        "tool_transform": "RigidTransform",
+        "held_offset": "ArmPoint",
+        "space": "SpaceSnapshot"
+      }
+    },
+    "SupportGeometryRequest": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "upper": "Occupancy",
+        "lowers": "Tuple[Occupancy, ...]",
+        "space": "SpaceSnapshot",
+        "contact_evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "SupportGeometryResult": {
+      "logical_owner": "P06",
+      "fields": {
+        "envelope": "Envelope",
+        "upper_target_id": "str",
+        "support_ids": "Tuple[str, ...]",
+        "upper_bottom_area_m2": "Optional[float]",
+        "supported_area_m2": "Optional[float]",
+        "ratio_lower_bound": "Optional[float]",
+        "contact": "Fact",
+        "horizontal": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "DriveReadiness": {
+      "logical_owner": "P07",
+      "fields": {
+        "envelope": "Envelope",
+        "holding": "HoldingSnapshot",
+        "posture_confirmed": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "NavigationRequest": {
+      "logical_owner": "P03",
+      "fields": {
+        "envelope": "Envelope",
+        "goal": "WaypointResult",
+        "localization": "LocalizationSnapshot",
+        "space": "SpaceSnapshot",
+        "readiness": "DriveReadiness",
+        "permit": "ControlPermit"
+      }
+    },
+    "ExitEvidence": {
+      "logical_owner": "P03",
+      "fields": {
+        "envelope": "Envelope",
+        "area": "Area",
+        "entire_envelope_outside": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "NavigationResult": {
+      "logical_owner": "P03",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult",
+        "stop": "Optional[StopReport]",
+        "residual_pose": "Optional[MapPose]",
+        "work_ready": "Fact",
+        "exit_evidence": "Optional[ExitEvidence]"
+      }
+    },
+    "Budget": {
+      "logical_owner": "P09",
+      "fields": {
+        "name": "str",
+        "attempts_limit": "Optional[int]",
+        "seconds_limit": "Optional[float]",
+        "attempts_used": "int",
+        "seconds_used": "float"
+      }
+    },
+    "WorkOrder": {
+      "logical_owner": "P09",
+      "fields": {
+        "envelope": "Envelope",
+        "category": "Category",
+        "destination": "Area",
+        "mapping_version": "str",
+        "inventory_id": "str",
+        "budget": "Budget"
+      }
+    },
+    "GraspRequest": {
+      "logical_owner": "P07",
+      "fields": {
+        "envelope": "Envelope",
+        "order": "WorkOrder",
+        "plan": "GeometryPlan",
+        "stop": "StopReport",
+        "holding": "HoldingSnapshot",
+        "permit": "ControlPermit"
+      }
+    },
+    "ManipulationResult": {
+      "logical_owner": "P07",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult",
+        "holding": "HoldingSnapshot",
+        "readiness": "Optional[DriveReadiness]",
+        "recovery_plan": "Optional[GeometryPlan]"
+      }
+    },
+    "PlacementRequest": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "order": "WorkOrder",
+        "mapping": "MappingSnapshot",
+        "plan": "GeometryPlan",
+        "stop": "StopReport",
+        "holding": "HoldingSnapshot",
+        "permit": "ControlPermit",
+        "region": "RegionBoundary"
+      }
+    },
+    "LayoutBrick": {
+      "logical_owner": "P08",
+      "fields": {
+        "target_id": "str",
+        "slot": "int",
+        "layer": "int",
+        "support_ids": "Tuple[str, ...]",
+        "support_ratio_lower": "Optional[float]",
+        "released": "Fact",
+        "in_region": "Fact",
+        "horizontal": "Fact",
+        "near_center": "Fact",
+        "placed_recovery_round": "int",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "LayoutSnapshot": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "area": "Area",
+        "kind": "LayoutKind",
+        "layout_recovery_round": "int",
+        "rebuild_generation": "int",
+        "confirmed_count": "int",
+        "bricks": "Tuple[LayoutBrick, ...]",
+        "bases_adjacent": "Fact",
+        "quality": "Fact"
+      }
+    },
+    "DeliveryKey": {
+      "logical_owner": "P09",
+      "fields": {
+        "run_id": "str",
+        "inventory_id": "str"
+      }
+    },
+    "InventoryItem": {
+      "logical_owner": "P09",
+      "fields": {
+        "inventory_id": "str",
+        "target_ids": "Tuple[str, ...]",
+        "identity_confirmed": "Fact",
+        "category": "Optional[Category]",
+        "location": "InventoryLocation",
+        "area": "Optional[Area]"
+      }
+    },
+    "ReleaseEvent": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "delivery_key": "DeliveryKey",
+        "category": "Category",
+        "area": "Area",
+        "mapping_version": "str",
+        "released_at": "ClockStamp",
+        "separated": "Fact",
+        "correct_region": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "DeliveryReceipt": {
+      "logical_owner": "P09",
+      "fields": {
+        "key": "DeliveryKey",
+        "first_event_id": "str",
+        "category": "Category",
+        "area": "Area",
+        "first_release_at": "ClockStamp",
+        "evidence_ids": "Tuple[str, ...]"
+      }
+    },
+    "PlacementResult": {
+      "logical_owner": "P08",
+      "fields": {
+        "envelope": "Envelope",
+        "result": "ActionResult",
+        "release": "Optional[ReleaseEvent]",
+        "layout": "LayoutSnapshot",
+        "proposed_space": "SpaceSnapshot",
+        "proposed_holding": "HoldingSnapshot",
+        "stillness": "Optional[StillnessCertificate]"
+      }
+    },
+    "StateSnapshot": {
+      "logical_owner": "P10B",
+      "fields": {
+        "run": "RunContext",
+        "revision": "int",
+        "space": "SpaceSnapshot",
+        "holding": "HoldingSnapshot",
+        "inventory": "Tuple[InventoryItem, ...]",
+        "deliveries": "Tuple[DeliveryReceipt, ...]",
+        "layouts": "Tuple[LayoutSnapshot, ...]",
+        "mapping": "Optional[MappingSnapshot]",
+        "budgets": "Tuple[Budget, ...]"
+      }
+    },
+    "HoldingUpdate": {
+      "logical_owner": "P07",
+      "fields": {
+        "envelope": "Envelope",
+        "previous": "Holding",
+        "current": "HoldingSnapshot",
+        "cause": "HoldingCause"
+      }
+    },
+    "OccupancyClearance": {
+      "logical_owner": "P08",
+      "fields": {
+        "target_id": "str",
+        "cause": "ClearanceCause",
+        "confirmed": "Fact",
+        "evidence": "Tuple[EvidenceRef, ...]"
+      }
+    },
+    "StateTransaction": {
+      "logical_owner": "P09",
+      "fields": {
+        "envelope": "Envelope",
+        "transaction_id": "str",
+        "expected_revision": "int",
+        "expected_space_version": "int",
+        "space": "SpaceSnapshot",
+        "holding": "HoldingSnapshot",
+        "inventory": "Tuple[InventoryItem, ...]",
+        "layouts": "Tuple[LayoutSnapshot, ...]",
+        "mapping": "Optional[MappingSnapshot]",
+        "release_events": "Tuple[ReleaseEvent, ...]",
+        "clearing_evidence": "Tuple[OccupancyClearance, ...]",
+        "holding_update": "Optional[HoldingUpdate]",
+        "budgets": "Tuple[Budget, ...]",
+        "run_update": "Optional[RunContext]"
+      }
+    },
+    "CommitReceipt": {
+      "logical_owner": "P10B",
+      "fields": {
+        "transaction_id": "str",
+        "status": "CommitStatus",
+        "revision": "Optional[int]",
+        "space_version": "Optional[int]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "ActionIntent": {
+      "logical_owner": "P10B",
+      "fields": {
+        "envelope": "Envelope",
+        "operation": "IntentOperation",
+        "order": "Optional[WorkOrder]",
+        "arm_plan": "Optional[GeometryPlan]",
+        "base_goal": "Optional[MapPose]",
+        "base_velocity_m_s_rad_s": "Optional[Tuple[float, float]]",
+        "pump_enabled": "Optional[bool]"
+      }
+    },
+    "IntentReceipt": {
+      "logical_owner": "P10B",
+      "fields": {
+        "run_id": "str",
+        "action_id": "str",
+        "intent_sha256": "str",
+        "commit": "CommitReceipt"
+      }
+    },
+    "ReadResult": {
+      "logical_owner": "P10B",
+      "fields": {
+        "status": "Outcome",
+        "snapshot": "Optional[StateSnapshot]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "RecoveryRequest": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "original_started_at": "ClockStamp",
+        "original_deadline": "ClockStamp",
+        "old_stop": "StopReport"
+      }
+    },
+    "RecoveryResult": {
+      "logical_owner": "P10B",
+      "fields": {
+        "status": "Outcome",
+        "snapshot": "Optional[StateSnapshot]",
+        "remaining_s": "Optional[float]",
+        "registration": "Optional[CommitReceipt]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "TimerRecord": {
+      "logical_owner": "P10B",
+      "fields": {
+        "format_version": "int",
+        "run_id": "str",
+        "started_at": "ClockStamp",
+        "deadline": "ClockStamp",
+        "refreshed_at": "ClockStamp",
+        "remaining_s": "float",
+        "refresh_period_s": "float",
+        "sequence": "int",
+        "state": "RunState",
+        "ever_restarted": "bool"
+      }
+    },
+    "SealRequest": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "run": "RunContext",
+        "stop": "StopReport",
+        "end_reason": "Reason"
+      }
+    },
+    "EndMarker": {
+      "logical_owner": "P10B",
+      "fields": {
+        "run_id": "str",
+        "original_deadline": "ClockStamp",
+        "ended_at": "ClockStamp",
+        "ever_restarted": "bool",
+        "stop_confirmed": "Fact",
+        "writers_closed": "Fact",
+        "sealed": "Fact",
+        "cleanup_state": "CleanupState"
+      }
+    },
+    "CleanupRequest": {
+      "logical_owner": "P10B",
+      "fields": {
+        "run_id": "str",
+        "runtime_root": "str",
+        "marker": "EndMarker",
+        "automatic": "bool"
+      }
+    },
+    "CleanupResult": {
+      "logical_owner": "P10B",
+      "fields": {
+        "status": "Outcome",
+        "marker": "EndMarker",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "RuntimeSignal": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "kind": "SignalKind",
+        "referee_authorized": "Fact"
+      }
+    },
+    "PermissionRequest": {
+      "logical_owner": "P10A",
+      "fields": {
+        "envelope": "Envelope",
+        "source": "MotionSource",
+        "purpose": "str",
+        "health": "HealthSnapshot",
+        "localization": "LocalizationSnapshot",
+        "readiness": "DriveReadiness",
+        "space": "SpaceSnapshot",
+        "old_stop": "StopReport",
+        "stillness": "Optional[StillnessCertificate]",
+        "intent_receipt": "IntentReceipt"
+      }
+    },
+    "RuntimeDecision": {
+      "logical_owner": "P10A",
+      "fields": {
+        "run": "RunContext",
+        "permit": "Optional[ControlPermit]",
+        "stop": "Optional[StopRequest]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "InitializeRunRequest": {
+      "logical_owner": "P10A",
+      "fields": {
+        "run": "RunContext",
+        "initial_snapshot": "StateSnapshot",
+        "start_signal": "RuntimeSignal",
+        "previous_end_marker": "Optional[EndMarker]"
+      }
+    },
+    "ScoreEstimate": {
+      "logical_owner": "P09",
+      "fields": {
+        "confirmed_points": "Optional[float]",
+        "unresolved_target_ids": "Tuple[str, ...]",
+        "evidence": "Tuple[EvidenceRef, ...]",
+        "policy_version": "str"
+      }
+    },
+    "MissionInput": {
+      "logical_owner": "P09",
+      "fields": {
+        "envelope": "Envelope",
+        "snapshot": "StateSnapshot",
+        "candidates": "Tuple[TargetObservation, ...]",
+        "action_events": "Tuple[ActionEvent, ...]",
+        "exits": "Tuple[ExitEvidence, ...]"
+      }
+    },
+    "MissionDecision": {
+      "logical_owner": "P09",
+      "fields": {
+        "envelope": "Envelope",
+        "phase": "MissionPhase",
+        "order": "Optional[WorkOrder]",
+        "delivery_complete": "Fact",
+        "layout_complete": "Fact",
+        "score": "ScoreEstimate",
+        "recovery_budget": "Optional[Budget]",
+        "end_reason": "Optional[Reason]"
+      }
+    },
+    "DependencyStatus": {
+      "logical_owner": "P11",
+      "fields": {
+        "owner": "Owner",
+        "contract_version": "Optional[str]",
+        "delivery_version": "Optional[str]",
+        "available": "Fact",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "IntegrationRequest": {
+      "logical_owner": "P11",
+      "fields": {
+        "contract_version": "str",
+        "dependencies": "Tuple[DependencyStatus, ...]",
+        "scenario_ids": "Tuple[str, ...]",
+        "origin": "Origin"
+      }
+    },
+    "VerificationResult": {
+      "logical_owner": "P11",
+      "fields": {
+        "scenario_id": "str",
+        "tier": "VerificationTier",
+        "status": "Fact",
+        "log_uri": "Optional[str]",
+        "reason": "Optional[Reason]"
+      }
+    },
+    "IntegrationReport": {
+      "logical_owner": "P11",
+      "fields": {
+        "contract_version": "str",
+        "checks": "Tuple[VerificationResult, ...]",
+        "dependencies": "Tuple[DependencyStatus, ...]",
+        "origin": "Origin"
+      }
+    },
+    "ContractCheck": {
+      "logical_owner": "P00",
+      "fields": {
+        "accepted": "bool",
+        "reason": "Optional[Reason]"
+      }
+    }
+  },
+  "enums": {
+    "ErrorCode": [
+      "invalid_field",
+      "missing_field",
+      "unknown_field",
+      "invalid_unit",
+      "version_mismatch",
+      "clock_mismatch",
+      "stale_run",
+      "stale_control",
+      "stale_request",
+      "stale_recovery",
+      "stale_geometry",
+      "expired",
+      "future_result",
+      "duplicate",
+      "id_conflict",
+      "unknown_identity",
+      "evidence_missing",
+      "evidence_not_physical",
+      "simulated_evidence",
+      "timeout",
+      "cancelled",
+      "unavailable",
+      "unconfigured",
+      "invalid_mapping",
+      "invalid_layout",
+      "occupancy_unresolved",
+      "conflict",
+      "storage_failure",
+      "not_authorized",
+      "deadline",
+      "limit_exceeded"
+    ],
+    "Owner": [
+      "P00",
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10A",
+      "P10B",
+      "P11"
+    ],
+    "Origin": [
+      "live",
+      "simulated",
+      "replay"
+    ],
+    "Outcome": [
+      "success",
+      "failed",
+      "cancelled",
+      "timed_out",
+      "unknown",
+      "rejected"
+    ],
+    "Fact": [
+      "confirmed",
+      "rejected",
+      "unknown"
+    ],
+    "Holding": [
+      "empty",
+      "held",
+      "unknown",
+      "dropped_unresolved"
+    ],
+    "ClockBasis": [
+      "monotonic",
+      "sensor",
+      "ros",
+      "utc"
+    ],
+    "EvidenceKind": [
+      "interface",
+      "command_submitted",
+      "command_echo",
+      "physical_observation"
+    ],
+    "Category": [
+      "doll",
+      "clock",
+      "banana",
+      "cake"
+    ],
+    "Area": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "RunState": [
+      "preparation",
+      "offline",
+      "armed",
+      "running",
+      "recovering",
+      "stopping",
+      "ended"
+    ],
+    "MotionSource": [
+      "navigation",
+      "precision",
+      "recovery",
+      "debug",
+      "arm",
+      "pump"
+    ],
+    "Phase": [
+      "approach",
+      "descend",
+      "contact",
+      "trial_lift",
+      "transport",
+      "place",
+      "withdraw",
+      "dismantle",
+      "temporary"
+    ],
+    "LayoutKind": [
+      "V1",
+      "V2",
+      "V3"
+    ],
+    "Visibility": [
+      "visible",
+      "partial",
+      "occluded",
+      "unknown"
+    ],
+    "OccupancyState": [
+      "actual",
+      "reserved",
+      "unknown"
+    ],
+    "ObservationState": [
+      "detected",
+      "empty",
+      "bad_image",
+      "backend_failure",
+      "unknown_class"
+    ],
+    "Distortion": [
+      "raw",
+      "corrected",
+      "unknown"
+    ],
+    "PlaneBasis": [
+      "calibration",
+      "support",
+      "verified_depth",
+      "known_dimensions",
+      "unknown"
+    ],
+    "Scene": [
+      "board",
+      "central",
+      "placement",
+      "tool"
+    ],
+    "Measurement": [
+      "unmeasured",
+      "simulated",
+      "verified"
+    ],
+    "CommitStatus": [
+      "committed",
+      "rejected",
+      "unknown"
+    ],
+    "IntentOperation": [
+      "arm",
+      "base_goal",
+      "base_velocity",
+      "pump"
+    ],
+    "HoldingCause": [
+      "observation",
+      "release",
+      "drop_reconciled"
+    ],
+    "ClearanceCause": [
+      "observed_moved",
+      "observed_empty"
+    ],
+    "SignalKind": [
+      "start",
+      "emergency_stop",
+      "deadline",
+      "manual_debug",
+      "finish"
+    ],
+    "MissionPhase": [
+      "wait_mapping",
+      "cake",
+      "ordinary",
+      "recovery",
+      "stopped"
+    ],
+    "CleanupState": [
+      "retained",
+      "pending",
+      "complete",
+      "unknown"
+    ],
+    "VerificationTier": [
+      "offline",
+      "cross_package",
+      "ros",
+      "device_control",
+      "physical_action",
+      "full_match"
+    ],
+    "InventoryLocation": [
+      "central",
+      "held",
+      "region",
+      "temporary",
+      "unknown"
+    ]
+  },
+  "ports": {
+    "ContractPort": {
+      "owner": "P00",
+      "methods": {
+        "check": {
+          "envelope": "Envelope",
+          "context": "ConsumerContext",
+          "return": "ContractCheck"
+        }
+      }
+    },
+    "ClockPort": {
+      "owner": "P10A",
+      "methods": {
+        "now": {
+          "return": "ClockStamp"
+        }
+      }
+    },
+    "DevicePort": {
+      "owner": "P01",
+      "methods": {
+        "health": {
+          "return": "HealthSnapshot"
+        },
+        "stop": {
+          "request": "StopRequest",
+          "return": "StopReport"
+        },
+        "submit_arm": {
+          "command": "ArmCommand",
+          "return": "ActionEvent"
+        },
+        "submit_base": {
+          "command": "BaseCommand",
+          "return": "ActionEvent"
+        },
+        "submit_pump": {
+          "command": "PumpCommand",
+          "return": "ActionEvent"
+        }
+      }
+    },
+    "MappingPort": {
+      "owner": "P02",
+      "methods": {
+        "localization": {
+          "return": "LocalizationSnapshot"
+        },
+        "map_metadata": {
+          "return": "MapMetadata"
+        },
+        "query": {
+          "request": "WaypointQuery",
+          "space": "SpaceSnapshot",
+          "return": "WaypointResult"
+        },
+        "record": {
+          "waypoint": "WaypointResult",
+          "return": "ContractCheck"
+        }
+      }
+    },
+    "NavigationPort": {
+      "owner": "P03",
+      "methods": {
+        "cancel": {
+          "request": "StopRequest",
+          "return": "StopReport"
+        },
+        "invalidate_space": {
+          "snapshot": "SpaceSnapshot",
+          "return": "ContractCheck"
+        },
+        "navigate": {
+          "request": "NavigationRequest",
+          "return": "NavigationResult"
+        }
+      }
+    },
+    "PerceptionPort": {
+      "owner": "P04",
+      "methods": {
+        "observe": {
+          "request": "PerceptionRequest",
+          "return": "PerceptionResult"
+        }
+      }
+    },
+    "ClassificationPort": {
+      "owner": "P05",
+      "methods": {
+        "read_mapping": {
+          "request": "ClassificationRequest",
+          "return": "ClassificationResult"
+        }
+      }
+    },
+    "GeometryPort": {
+      "owner": "P06",
+      "methods": {
+        "plan": {
+          "request": "GeometryRequest",
+          "return": "GeometryResult"
+        },
+        "plan_placement": {
+          "request": "PlacementGeometryRequest",
+          "return": "GeometryResult"
+        },
+        "support_geometry": {
+          "request": "SupportGeometryRequest",
+          "return": "SupportGeometryResult"
+        }
+      }
+    },
+    "ManipulationPort": {
+      "owner": "P07",
+      "methods": {
+        "cancel": {
+          "request": "StopRequest",
+          "return": "ManipulationResult"
+        },
+        "grasp": {
+          "request": "GraspRequest",
+          "return": "ManipulationResult"
+        },
+        "observe_holding": {
+          "observation": "ToolObservation",
+          "return": "HoldingSnapshot"
+        },
+        "propose_release": {
+          "release": "ReleaseEvent",
+          "holding": "HoldingSnapshot",
+          "return": "HoldingUpdate"
+        }
+      }
+    },
+    "PlacementPort": {
+      "owner": "P08",
+      "methods": {
+        "assess_layout": {
+          "snapshot": "SpaceSnapshot",
+          "previous": "LayoutSnapshot",
+          "return": "LayoutSnapshot"
+        },
+        "assess_stillness": {
+          "observations": "Tuple[PerceptionResult, ...]",
+          "stop": "StopReport",
+          "snapshot": "SpaceSnapshot",
+          "return": "Optional[StillnessCertificate]"
+        },
+        "place": {
+          "request": "PlacementRequest",
+          "return": "PlacementResult"
+        },
+        "propose_space": {
+          "observations": "PerceptionResult",
+          "previous": "SpaceSnapshot",
+          "return": "SpaceSnapshot"
+        }
+      }
+    },
+    "MissionPort": {
+      "owner": "P09",
+      "methods": {
+        "step": {
+          "inputs": "MissionInput",
+          "return": "MissionDecision"
+        }
+      }
+    },
+    "RuntimePort": {
+      "owner": "P10A",
+      "methods": {
+        "recover": {
+          "result": "RecoveryResult",
+          "return": "RuntimeDecision"
+        },
+        "request_permission": {
+          "request": "PermissionRequest",
+          "return": "RuntimeDecision"
+        },
+        "signal": {
+          "signal": "RuntimeSignal",
+          "return": "RuntimeDecision"
+        },
+        "supervise": {
+          "now": "ClockStamp",
+          "health": "HealthSnapshot",
+          "return": "RuntimeDecision"
+        }
+      }
+    },
+    "StateStorePort": {
+      "owner": "P10B",
+      "methods": {
+        "commit": {
+          "transaction": "StateTransaction",
+          "return": "CommitReceipt"
+        },
+        "read": {
+          "run_id": "str",
+          "return": "ReadResult"
+        }
+      }
+    },
+    "PersistencePort": {
+      "owner": "P10B",
+      "methods": {
+        "append_event": {
+          "event": "ActionEvent",
+          "return": "CommitReceipt"
+        },
+        "cleanup": {
+          "request": "CleanupRequest",
+          "return": "CleanupResult"
+        },
+        "commit": {
+          "transaction": "StateTransaction",
+          "return": "CommitReceipt"
+        },
+        "commit_intent": {
+          "intent": "ActionIntent",
+          "return": "IntentReceipt"
+        },
+        "initialize_run": {
+          "request": "InitializeRunRequest",
+          "return": "CommitReceipt"
+        },
+        "read": {
+          "run_id": "str",
+          "return": "ReadResult"
+        },
+        "refresh_timer": {
+          "record": "TimerRecord",
+          "return": "CommitReceipt"
+        },
+        "register_recovery": {
+          "request": "RecoveryRequest",
+          "return": "RecoveryResult"
+        },
+        "save_keyframe": {
+          "reference": "EvidenceRef",
+          "content": "bytes",
+          "return": "EvidenceRef"
+        },
+        "seal": {
+          "request": "SealRequest",
+          "return": "EndMarker"
+        }
+      }
+    },
+    "IntegrationPort": {
+      "owner": "P11",
+      "methods": {
+        "verify": {
+          "request": "IntegrationRequest",
+          "return": "IntegrationReport"
+        }
+      }
+    }
+  },
+  "wire_fields": [
+    "contract_version",
+    "type",
+    "payload"
+  ],
+  "unknown_fields": "reject",
+  "missing_fields": "reject including Optional; send explicit null",
+  "version_policy": "exact"
+}

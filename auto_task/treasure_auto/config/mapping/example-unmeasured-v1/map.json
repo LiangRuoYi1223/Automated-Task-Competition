@@ -1,0 +1,234 @@
+{
+  "format": 1,
+  "contract_version": "1.0.0",
+  "width": 12,
+  "height": 12,
+  "row_order": "top_to_bottom",
+  "image_sha256": "cb6a20d5b93fbfae74e7e1ccffe7d87119dd983b6ad19a85389b1ec0ba06399f",
+  "metadata": {
+    "envelope": {
+      "run_id": "sim-run",
+      "instance_id": "sim-instance",
+      "control_epoch": 1,
+      "producer": "P02",
+      "event_id": "e1",
+      "sequence": 1000,
+      "request_id": null,
+      "action_id": null,
+      "target_id": null,
+      "emitted_at": {
+        "seconds": 10,
+        "basis": "monotonic",
+        "clock_id": "sim-clock",
+        "boot_id": "sim-boot"
+      },
+      "expires_at": {
+        "seconds": 20,
+        "basis": "monotonic",
+        "clock_id": "sim-clock",
+        "boot_id": "sim-boot"
+      },
+      "versions": {
+        "config": "sim-config",
+        "map": "example-unmeasured-v1",
+        "calibration": null,
+        "model": null,
+        "mapping": null,
+        "layout": null,
+        "space": 0
+      },
+      "origin": "simulated",
+      "layout_recovery_round": null,
+      "rebuild_generation": null,
+      "base_motion_epoch": 0
+    },
+    "map_version": "example-unmeasured-v1",
+    "image_uri": "grid.pgm",
+    "resolution_m_per_cell": 0.5,
+    "origin": {
+      "frame_id": "map",
+      "x": 0,
+      "y": 0,
+      "yaw": 0,
+      "position_unit": "m",
+      "angle_unit": "rad",
+      "error_m": 0,
+      "error_rad": 0
+    },
+    "regions": [
+      {
+        "area": "A",
+        "frame_id": "map",
+        "polygon_m": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0.45,
+            "y": 0
+          },
+          {
+            "x": 0.45,
+            "y": 0.45
+          },
+          {
+            "x": 0,
+            "y": 0.45
+          }
+        ],
+        "placement_center": {
+          "frame_id": "map",
+          "x": 0.225,
+          "y": 0.225,
+          "yaw": 0,
+          "position_unit": "m",
+          "angle_unit": "rad",
+          "error_m": 0,
+          "error_rad": 0
+        },
+        "error_m": 0
+      },
+      {
+        "area": "B",
+        "frame_id": "map",
+        "polygon_m": [
+          {
+            "x": 1,
+            "y": 0
+          },
+          {
+            "x": 1.45,
+            "y": 0
+          },
+          {
+            "x": 1.45,
+            "y": 0.45
+          },
+          {
+            "x": 1,
+            "y": 0.45
+          }
+        ],
+        "placement_center": {
+          "frame_id": "map",
+          "x": 1.225,
+          "y": 0.225,
+          "yaw": 0,
+          "position_unit": "m",
+          "angle_unit": "rad",
+          "error_m": 0,
+          "error_rad": 0
+        },
+        "error_m": 0
+      },
+      {
+        "area": "C",
+        "frame_id": "map",
+        "polygon_m": [
+          {
+            "x": 2,
+            "y": 0
+          },
+          {
+            "x": 2.45,
+            "y": 0
+          },
+          {
+            "x": 2.45,
+            "y": 0.45
+          },
+          {
+            "x": 2,
+            "y": 0.45
+          }
+        ],
+        "placement_center": {
+          "frame_id": "map",
+          "x": 2.225,
+          "y": 0.225,
+          "yaw": 0,
+          "position_unit": "m",
+          "angle_unit": "rad",
+          "error_m": 0,
+          "error_rad": 0
+        },
+        "error_m": 0
+      },
+      {
+        "area": "D",
+        "frame_id": "map",
+        "polygon_m": [
+          {
+            "x": 3,
+            "y": 0
+          },
+          {
+            "x": 3.45,
+            "y": 0
+          },
+          {
+            "x": 3.45,
+            "y": 0.45
+          },
+          {
+            "x": 3,
+            "y": 0.45
+          }
+        ],
+        "placement_center": {
+          "frame_id": "map",
+          "x": 3.225,
+          "y": 0.225,
+          "yaw": 0,
+          "position_unit": "m",
+          "angle_unit": "rad",
+          "error_m": 0,
+          "error_rad": 0
+        },
+        "error_m": 0
+      }
+    ],
+    "measurement": "unmeasured"
+  },
+  "boundary": [
+    {
+      "x": 0,
+      "y": 0
+    },
+    {
+      "x": 6,
+      "y": 0
+    },
+    {
+      "x": 6,
+      "y": 6
+    },
+    {
+      "x": 0,
+      "y": 6
+    }
+  ],
+  "central": [
+    {
+      "x": 2.5,
+      "y": 2.5
+    },
+    {
+      "x": 3.5,
+      "y": 2.5
+    },
+    {
+      "x": 3.5,
+      "y": 3.5
+    },
+    {
+      "x": 2.5,
+      "y": 3.5
+    }
+  ],
+  "waypoints_uri": "waypoints.json",
+  "waypoints_sha256": "4297862b4c3fa964e5fe97d3811d543b9440a03fcbd2cab39a46f0f6dd715942",
+  "free_threshold": 0.196,
+  "occupied_threshold": 0.65
+}

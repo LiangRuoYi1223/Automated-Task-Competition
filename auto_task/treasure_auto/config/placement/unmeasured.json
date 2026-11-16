@@ -1,0 +1,17 @@
+{
+  "version": "p08-unmeasured",
+  "origin": "live",
+  "measurement": "unmeasured",
+  "center_tolerance_m": null,
+  "adjacent_gap_m": null,
+  "height_tolerance_m": null,
+  "ground_z_m": null,
+  "evidence_max_age_s": null,
+  "frame_gap_s": null,
+  "release_window_s": null,
+  "brick_motion_m": null,
+  "cup_retreat_m": null,
+  "still_translation_m": null,
+  "still_angle_rad": null,
+  "certificate_ttl_s": null
+}

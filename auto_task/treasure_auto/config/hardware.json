@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "expected_ros_distro": "noetic",
+  "streams": [
+    {"key": "odometry", "topic": "/odom", "type": "nav_msgs/Odometry", "max_age_s": 1.0},
+    {"key": "laser", "topic": "/scan", "type": "sensor_msgs/LaserScan", "max_age_s": 1.0},
+    {"key": "camera", "topic": "/camera/color/image_raw", "type": "sensor_msgs/Image", "max_age_s": 1.0},
+    {"key": "arm_state", "topic": "/SwiftproState_topic", "type": "swiftpro/SwiftproState", "max_age_s": 1.0, "echo_only": true}
+  ],
+  "commands": [
+    {"key": "base_command", "topic": "/cmd_vel", "type": "geometry_msgs/Twist", "subscriber": "/spark_base_server"},
+    {"key": "arm_position_command", "topic": "/position_write_topic", "type": "swiftpro/position", "subscriber": "/swiftpro_write_node"},
+    {"key": "pump_command", "topic": "/pump_topic", "type": "swiftpro/status", "subscriber": "/swiftpro_write_node"}
+  ],
+  "transforms": [
+    {"key": "odometry_to_base", "target": "odom", "source": "base_footprint", "max_age_s": 1.0},
+    {"key": "base_to_laser", "target": "base_footprint", "source": "laser_frame", "max_age_s": null},
+    {"key": "base_to_camera", "target": "base_footprint", "source": "camera_link", "max_age_s": null}
+  ]
+}

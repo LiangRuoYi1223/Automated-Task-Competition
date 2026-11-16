@@ -1,0 +1,10 @@
+<launch>
+  <!-- 仅启动自检，不包含驱动、不初始化机械臂、不发送执行器命令。 -->
+  <arg name="profile" default="$(find treasure_auto)/config/hardware.json"/>
+  <arg name="observe" default="3.0"/>
+  <arg name="timeout" default="12.0"/>
+  <arg name="report" default="$(env HOME)/treasure_preflight_report.json"/>
+  <node pkg="treasure_auto" type="device_preflight.py" name="treasure_device_preflight_report"
+        output="screen"
+        args="--live --profile &quot;$(arg profile)&quot; --observe $(arg observe) --timeout $(arg timeout) --output &quot;$(arg report)&quot;"/>
+</launch>

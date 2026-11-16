@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "origin": "simulated",
+  "measurement": "unmeasured",
+  "policy": {
+    "probe_attempts": 3,
+    "recenter_attempts": 3,
+    "push_attempts": 3,
+    "push_total_s": 30
+  },
+  "push_limits": {
+    "max_step_distance_m": null,
+    "max_step_duration_s": null,
+    "max_speed_m_s": null,
+    "max_observation_age_s": null,
+    "stall_window_s": null,
+    "min_fixed_progress_m": null,
+    "stop_linear_m_s": null,
+    "stop_angular_rad_s": null,
+    "stop_window_s": null,
+    "stability_window_s": null
+  }
+}
