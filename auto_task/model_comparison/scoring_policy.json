@@ -1,0 +1,10 @@
+{
+  "iou_threshold": 0.5,
+  "corner_tolerance_fraction": 0.01,
+  "weights": {
+    "geometry_f1": 0.35,
+    "class_f1": 0.25,
+    "mask_quality": 0.25,
+    "corner_recall": 0.15
+  }
+}

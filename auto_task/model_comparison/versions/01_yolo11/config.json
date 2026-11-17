@@ -1,0 +1,14 @@
+{
+  "variant": "yolo11_seg",
+  "checkpoint": null,
+  "init_checkpoint": null,
+  "device": "cpu",
+  "image_size": 640,
+  "confidence": 0.25,
+  "mask_threshold": 0.5,
+  "max_detections": 100,
+  "epochs": 100,
+  "batch": 2,
+  "seed": 42,
+  "geometry": {"epsilon_fraction": 0.01, "max_mask_quad_error": 0.1}
+}

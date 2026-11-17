@@ -1,0 +1,9 @@
+{
+  "variant": "nontrained",
+  "device": "cpu",
+  "method": "lsd",
+  "templates": null,
+  "detection": {},
+  "line_detection": {},
+  "classification": {"min_score": 0.75, "min_margin": 0.08}
+}

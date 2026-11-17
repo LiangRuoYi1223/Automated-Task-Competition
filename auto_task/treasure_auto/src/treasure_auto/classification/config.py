@@ -1,5 +1,4 @@
 """P05-owned configuration, with explicit unmeasured values and no field defaults."""
-#定义板面模板、识别门槛，并检查配置
 import hashlib
 import json
 import math
@@ -7,12 +6,12 @@ from dataclasses import dataclass, fields
 from typing import Optional, Tuple
 from treasure_auto.contracts import core as c, models as m
 
-#数值检查
+
 def number(value, name, minimum=0, maximum=None):
     c.require(type(value) in (int, float) and math.isfinite(value), name, 'finite numeric value required')
     c.require(value >= minimum and (maximum is None or value <= maximum), name, 'outside allowed range')
 
-#字符串检查
+
 def text(value, name):
     c.require(type(value) is str and bool(value.strip()), name, 'nonempty value required')
 
@@ -27,7 +26,6 @@ def readiness(measurement, evidence, origin):
 
 @dataclass(frozen=True)
 class SlotRegion:
-    #描述B、C、D区域的矩形边界，左上角为(0,0)，右下角为(1,1)
     area: m.Area
     left: float
     top: float

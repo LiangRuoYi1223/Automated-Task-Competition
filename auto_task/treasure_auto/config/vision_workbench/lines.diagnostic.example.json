@@ -1,0 +1,20 @@
+{
+  "measurement": "diagnostic_unverified",
+  "method": "lsd",
+  "line_detection": {},
+  "detection": {
+    "min_area_px2": 500.0,
+    "max_area_fraction": 0.95,
+    "max_line_error_px": 2.0,
+    "min_edge_points": 4,
+    "min_edge_span_px": 10.0,
+    "min_corner_sine": 0.15,
+    "approx_epsilon_px": 2.0,
+    "canny_low": 40,
+    "canny_high": 120,
+    "roi": null,
+    "board_regions": []
+  },
+  "classification": {"min_score": 0.75, "min_margin": 0.08},
+  "crop_size_px": 160
+}

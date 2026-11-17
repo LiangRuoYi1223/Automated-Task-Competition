@@ -45,3 +45,4 @@ dist/
 .env
 .env.*
 !.env.example
+/auto_task/model_comparison/verification/
